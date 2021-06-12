@@ -5,7 +5,7 @@
  * --------------------------------------------------------------------------
  */
 
-import { defineJQueryPlugin, isElement, reflow, typeCheckConfig } from './util/index'
+import { defineJQueryPlugin, getElement, isElement, onDOMContentLoaded, reflow, typeCheckConfig } from './util/index'
 import EventHandler from './dom/event-handler'
 import Manipulator from './dom/manipulator'
 import SelectorEngine from './dom/selector-engine'
@@ -20,7 +20,6 @@ import BaseComponent from './base-component'
 const NAME = 'scrollspy'
 const DATA_KEY = 'bs.scrollspy'
 const EVENT_KEY = `.${DATA_KEY}`
-const DATA_API_KEY = '.data-api'
 
 const Default = {
   target: null,
@@ -28,12 +27,11 @@ const Default = {
 }
 
 const DefaultType = {
-  target: '(string|element)',
+  target: 'element',
   rootMargin: '(string)'
 }
 
 const EVENT_ACTIVATE = `activate${EVENT_KEY}`
-const EVENT_LOAD_DATA_API = `load${EVENT_KEY}${DATA_API_KEY}`
 
 const CLASS_NAME_DROPDOWN_ITEM = 'dropdown-item'
 const CLASS_NAME_ACTIVE = 'active'
@@ -118,12 +116,9 @@ class ScrollSpy extends BaseComponent {
       ...(typeof config === 'object' && config ? config : {})
     }
 
-    if (!isElement(config.target)) {
-      config.target = SelectorEngine.findOne(config.target)
-    }
+    config.target = getElement(config.target)
 
     typeCheckConfig(NAME, config, DefaultType)
-
     return config
   }
 
@@ -226,8 +221,7 @@ class ScrollSpy extends BaseComponent {
  * Data Api implementation
  * ------------------------------------------------------------------------
  */
-
-EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
+onDOMContentLoaded(() => {
   SelectorEngine.find(SELECTOR_DATA_SPY)
     .forEach(spy => new ScrollSpy(spy))
 })
@@ -236,7 +230,6 @@ EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
  * ------------------------------------------------------------------------
  * jQuery
  * ------------------------------------------------------------------------
- * add .ScrollSpy to jQuery only if jQuery is present
  */
 
 defineJQueryPlugin(ScrollSpy)
