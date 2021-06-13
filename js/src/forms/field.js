@@ -8,6 +8,7 @@ import { isElement, typeCheckConfig } from '../util/index'
 import Messages from './messages'
 import Manipulator from '../dom/manipulator'
 import EventHandler from '../dom/event-handler'
+import BaseComponent from '../base-component'
 
 const NAME = 'field'
 const DATA_KEY = 'bs.field'
@@ -31,9 +32,9 @@ const DefaultType = {
   invalid: 'string'
 }
 
-class Field {
+class Field extends BaseComponent {
   constructor(element, config) {
-    this._element = element
+    super(element)
     if (!isElement(this._element)) {
       throw new TypeError(`field "${this._config.name}" not found`)
     }
@@ -50,6 +51,10 @@ class Field {
     EventHandler.on(this._element, EVENT_INPUT, () => {
       this.clearAppended()
     })
+  }
+
+  static get NAME() {
+    return NAME
   }
 
   getElement() {
@@ -101,10 +106,11 @@ class Field {
   }
 
   _appendFeedback(htmlElement) {
-    this.clearAppended()
-    if (!htmlElement) {
+    if (!isElement(htmlElement)) {
       return
     }
+
+    this.clearAppended()
 
     const feedbackElement = htmlElement
 

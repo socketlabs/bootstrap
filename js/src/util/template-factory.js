@@ -110,7 +110,7 @@ class TemplateFactory {
     content = this._parseMaybeFunction(content)
 
     if (isElement(content)) {
-      this._putElementInTemplate()
+      this._putElementInTemplate(content, templateElement)
       return
     }
 

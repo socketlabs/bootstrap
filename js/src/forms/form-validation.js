@@ -40,7 +40,7 @@ class FormValidation extends BaseComponent {
     this._config = this._getConfig(config)
 
     this._addEventListeners()
-    this._formFields = [] // Our fields
+    this._formFields = new Map() // Our fields
   }
 
   static get NAME() {
@@ -48,7 +48,7 @@ class FormValidation extends BaseComponent {
   }
 
   getFields() {
-    if (!this._formFields.length) {
+    if (!this._formFields.size) {
       this._formFields = this._initializeFields()
     }
 
@@ -121,7 +121,7 @@ class FormValidation extends BaseComponent {
     Array.from(this._element.elements).forEach(element => {
       const { id, name } = element
 
-      const field = new Field(element, {
+      const field = Field.getOrCreateInstance(element, {
         name: id || name,
         type: this._config.type
       })
