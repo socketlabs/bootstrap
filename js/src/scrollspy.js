@@ -23,11 +23,13 @@ const EVENT_KEY = `.${DATA_KEY}`
 
 const Default = {
   target: null,
-  rootMargin: '0px'
+  offset: null, // @deprecated, only for backwards Compatibility reasons
+  rootMargin: '10px'
 }
 
 const DefaultType = {
   target: 'element',
+  offset: '(number|null)', // @deprecated, only for backwards Compatibility reasons
   rootMargin: '(string)'
 }
 
@@ -186,7 +188,7 @@ class ScrollSpy extends BaseComponent {
     const options = {
       root: this._element,
       threshold: 0,
-      rootMargin: this._config.rootMargin
+      rootMargin: this._config.offset === null ? this._config.rootMargin : `${this._config.offset}px 0`
     }
 
     return new IntersectionObserver(callback.bind(this), options)
