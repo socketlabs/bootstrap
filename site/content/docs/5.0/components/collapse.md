@@ -40,6 +40,29 @@ Generally, we recommend using a button with the `data-bs-target` attribute. Whil
 </div>
 {{< /example >}}
 
+## Horizontal
+
+The collapse plugin also supports horizontal collapsing. Add the `.width` modifier class to transition the `width` instead of `height` and set a `width` on the immediate child element.
+
+{{< callout info >}}
+Please note that while the example below has a `min-height` set to avoid excessive repaints in our docs, this is not explicitly required. **Only the `width` on the child element is required.**
+{{< /callout >}}
+
+{{< example >}}
+<p>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+    Toggle width collapse
+  </button>
+</p>
+<div style="min-height: 120px;">
+  <div class="collapse width" id="collapseWidthExample">
+    <div class="card card-body" style="width: 300px;">
+      This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
 ## Multiple targets
 
 A `<button>` or `<a>` can show and hide multiple elements by referencing them with a selector in its `href` or `data-bs-target` attribute.
