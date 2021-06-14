@@ -5,7 +5,7 @@
  * --------------------------------------------------------------------------
  */
 
-import { defineJQueryPlugin, getElement, isElement, onDOMContentLoaded, reflow, typeCheckConfig } from './util/index'
+import { defineJQueryPlugin, getElement, onDOMContentLoaded, reflow, typeCheckConfig } from './util/index'
 import EventHandler from './dom/event-handler'
 import Manipulator from './dom/manipulator'
 import SelectorEngine from './dom/selector-engine'
@@ -57,10 +57,6 @@ class ScrollSpy extends BaseComponent {
     // this._element is  the observablesContainer
     this._config = this._getConfig(config)
     this._target = this._config.target
-
-    if (!isElement(this._target)) {
-      throw new TypeError('Target Container is not defined')
-    }
 
     this._targetLinks = []
     this._activeTarget = null
