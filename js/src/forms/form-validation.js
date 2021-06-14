@@ -88,6 +88,11 @@ class FormValidation extends BaseComponent {
         return
       }
 
+      if (field.errorMessages().has('default')) {
+        field.errorMessages().get('default').append()
+        return
+      }
+
       for (const property in element.validity) {
         if (element.validity[property]) {
           field.errorMessages().set(property, element.validationMessage)
