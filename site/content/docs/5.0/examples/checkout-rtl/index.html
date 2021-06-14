@@ -69,45 +69,30 @@ body_class: "bg-light"
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">الاسم الأول</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                يرجى إدخال اسم أول صحيح.
-              </div>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" data-bs-invalid="يرجى إدخال اسم أول صحيح." required>
             </div>
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">اسم العائلة</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                يرجى إدخال اسم عائلة صحيح.
-              </div>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" data-bs-invalid="يرجى إدخال اسم عائلة صحيح." required>
             </div>
 
             <div class="col-12">
               <label for="username" class="form-label">اسم المستخدم</label>
               <div class="input-group has-validation">
                 <span class="input-group-text">@</span>
-                <input type="text" class="form-control" id="username" placeholder="اسم المستخدم" required>
-              <div class="invalid-feedback">
-                اسم المستخدم الخاص بك مطلوب.
-                </div>
+                <input type="text" class="form-control" id="username" placeholder="اسم المستخدم" data-bs-invalid="اسم المستخدم الخاص بك مطلوب." required>
               </div>
             </div>
 
             <div class="col-12">
               <label for="email" class="form-label">البريد الإلكتروني <span class="text-muted">(اختياري)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
-              <div class="invalid-feedback">
-                يرجى إدخال عنوان بريد إلكتروني صحيح لتصلكم تحديثات الشحن.
-              </div>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com" data-bs-invalid="يرجى إدخال عنوان بريد إلكتروني صحيح لتصلكم تحديثات الشحن.">
             </div>
 
             <div class="col-12">
               <label for="address" class="form-label">العنوان</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 الشارع الأول" required>
-              <div class="invalid-feedback">
-                يرجى إدخال عنوان الشحن الخاص بك.
-              </div>
+              <input type="text" class="form-control" id="address" placeholder="1234 الشارع الأول" data-bs-invalid="يرجى إدخال عنوان الشحن الخاص بك." required>
             </div>
 
             <div class="col-12">
@@ -117,32 +102,23 @@ body_class: "bg-light"
 
             <div class="col-md-5">
               <label for="country" class="form-label">البلد</label>
-              <select class="form-select" id="country" required>
+              <select class="form-select" id="country" data-bs-invalid="يرجى اختيار بلد صحيح." required>
                 <option value="">اختر...</option>
                 <option>الولايات المتحدة الأمريكية</option>
               </select>
-              <div class="invalid-feedback">
-                يرجى اختيار بلد صحيح.
-              </div>
             </div>
 
             <div class="col-md-4">
               <label for="state" class="form-label">المنطقة</label>
-              <select class="form-select" id="state" required>
+              <select class="form-select" id="state" data-bs-invalid="يرجى اختيار اسم منطقة صحيح." required>
                 <option value="">اختر...</option>
                 <option>كاليفورنيا</option>
               </select>
-              <div class="invalid-feedback">
-                يرجى اختيار اسم منطقة صحيح.
-              </div>
             </div>
 
             <div class="col-md-3">
               <label for="zip" class="form-label">الرمز البريدي</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required>
-              <div class="invalid-feedback">
-                الرمز البريدي مطلوب.
-              </div>
+              <input type="text" class="form-control" id="zip" placeholder="" data-bs-invalid="الرمز البريدي مطلوب." required>
             </div>
           </div>
 
@@ -180,35 +156,23 @@ body_class: "bg-light"
           <div class="row gy-3">
             <div class="col-md-6">
               <label for="cc-name" class="form-label">الاسم على البطاقة</label>
-              <input type="text" class="form-control" id="cc-name" placeholder="" required>
+              <input type="text" class="form-control" id="cc-name" placeholder="" data-bs-invalid="الاسم على البطاقة مطلوب" required>
               <small class="text-muted">الاسم الكامل كما هو معروض على البطاقة</small>
-              <div class="invalid-feedback">
-                الاسم على البطاقة مطلوب
-              </div>
             </div>
 
             <div class="col-md-6">
               <label for="cc-number" class="form-label">رقم البطاقة</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="" required>
-              <div class="invalid-feedback">
-                رقم بطاقة الائتمان مطلوب
-              </div>
+              <input type="text" class="form-control" id="cc-number" placeholder="" data-bs-invalid="رقم بطاقة الائتمان مطلوب" required>
             </div>
 
             <div class="col-md-3">
               <label for="cc-expiration" class="form-label">تاريخ انتهاء الصلاحية</label>
-              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-              <div class="invalid-feedback">
-                تاريخ انتهاء الصلاحية مطلوب
-              </div>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" data-bs-invalid="تاريخ انتهاء الصلاحية مطلوب" required>
             </div>
 
             <div class="col-md-3">
               <label for="cc-cvv" class="form-label">الرمز الثلاثي (CVV)</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-              <div class="invalid-feedback">
-                رمز الحماية مطلوب
-              </div>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" data-bs-invalid="رمز الحماية مطلوب" required>
             </div>
           </div>
 
