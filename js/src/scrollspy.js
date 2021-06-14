@@ -56,7 +56,6 @@ class ScrollSpy extends BaseComponent {
 
     // this._element is  the observablesContainer
     this._config = this._getConfig(config)
-    this._target = this._config.target
 
     this._targetLinks = []
     this._activeTarget = null
@@ -80,7 +79,7 @@ class ScrollSpy extends BaseComponent {
   refresh() {
     // `${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}, .${CLASS_NAME_DROPDOWN_ITEM}`
     this._targetLinks = SelectorEngine
-      .find('[href]', this._target)
+      .find('[href]', this._config.target)
       .filter(el => el.hash.length > 0)// ensure that all have id
 
     this._observableSections = this._targetLinks
@@ -158,7 +157,7 @@ class ScrollSpy extends BaseComponent {
   }
 
   _clearActiveClass() {
-    SelectorEngine.find(`.${CLASS_NAME_ACTIVE}`, this._target)
+    SelectorEngine.find(`.${CLASS_NAME_ACTIVE}`, this._config.target)
       .forEach(node => node.classList.remove(CLASS_NAME_ACTIVE))
   }
 
