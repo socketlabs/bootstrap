@@ -39,3 +39,10 @@ Thumbs.db
 # Folders to ignore
 /js/coverage/
 /node_modules/
+dist/
+js/
+
+# Visual Studio Files and Folders
+.vs/
+obj/
+bin/
