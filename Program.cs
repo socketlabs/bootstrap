@@ -1,12 +1,13 @@
-﻿using System;
+using System;
 
 namespace SocketLabs.Bootstrap
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("The program, it does nothing.");
         }
+
     }
 }

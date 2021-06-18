@@ -36,14 +36,14 @@ $grays: (
 // fusv-enable
 
 // scss-docs-start color-variables
-$blue:    #271ae8 !default;
+$blue:    #1e35fc !default;
 $indigo:  #4600f0 !default;
-$purple:  #9518f0 !default;
-$pink:    #f025e1 !default;
-$red:     #db1714 !default;
-$orange:  #ed5500 !default;
-$yellow:  #fded44 !default;
-$green:   #039632 !default;
+$purple:  #3a12a1 !default;
+$pink:    #ff8088 !default;
+$red:     #ff1212 !default;
+$orange:  #ed7000 !default;
+$yellow:  #ffd724 !default;
+$green:   #05a62a !default;
 $teal:    #22eef0 !default;
 $cyan:    #10c4f0 !default;
 // scss-docs-end color-variables
@@ -419,6 +419,7 @@ $aspect-ratios: (
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
 $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-brand:           Jost, $font-family-sans-serif !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$variable-prefix}font-sans-serif) !default;
@@ -464,7 +465,7 @@ $font-sizes: (
 
 // scss-docs-start headings-variables
 $headings-margin-bottom:      $spacer * .5 !default;
-$headings-font-family:        null !default;
+$headings-font-family:        $font-family-brand !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        500 !default;
 $headings-line-height:        1.2 !default;

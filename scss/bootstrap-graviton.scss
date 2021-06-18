@@ -8,7 +8,9 @@
 // scss-docs-start import-stack
 // Configuration
 @import "functions";
-@import "variables-graviton";
+@import "themes/graviton/variables-graviton";
+@import "themes/graviton/type";
+@import "themes/graviton/utilities";
 @import "mixins";
 @import "utilities";
 

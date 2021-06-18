@@ -1,0 +1,20 @@
+.bg-frost {
+  backdrop-filter: blur(8px);
+  /* stylelint-disable declaration-no-important */
+  &.bg-dark {
+    background-color: rgba($dark, .5) !important;
+  }
+
+  &.bg-light {
+    background-color: rgba($light, .5) !important;
+  }
+
+  &.bg-primary {
+    background-color: rgba($primary, .5) !important;
+  }
+
+  &.bg-brand {
+    background-color: rgba($brand, .5) !important;
+  }
+  /* stylelint-enable */
+}
