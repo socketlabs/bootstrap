@@ -36,16 +36,16 @@ $grays: (
 // fusv-enable
 
 // scss-docs-start color-variables
-$blue:    #1e35fc !default;
+$blue:    #181a3c !default;
 $indigo:  #4600f0 !default;
-$purple:  #3a12a1 !default;
+$purple:  #60298a !default;
 $pink:    #ff8088 !default;
-$red:     #ff1212 !default;
-$orange:  #ed7000 !default;
-$yellow:  #ffd724 !default;
+$red:     #fa290c !default;
+$orange:  #f97000 !default;
+$yellow:  #fab70c !default;
 $green:   #05a62a !default;
 $teal:    #22eef0 !default;
-$cyan:    #10c4f0 !default;
+$cyan:    #43a9e0 !default;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -97,7 +97,7 @@ $theme-colors: (
 $min-contrast-ratio:   3 !default;
 
 // Customize the light and dark text colors for use in our color contrast function.
-$color-contrast-dark:      $black !default;
+$color-contrast-dark:      $gray-900 !default;
 $color-contrast-light:     $white !default;
 
 // fusv-disable
@@ -239,7 +239,7 @@ $variable-prefix:             bs- !default;
 // The gradient which is added to components if `$enable-gradients` is `true`
 // This gradient is also added to elements with `.bg-gradient`
 // scss-docs-start variable-gradient
-$gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
+$gradient: linear-gradient(318deg, rgba($black, .15), rgba($white, 0)) !default;
 // scss-docs-end variable-gradient
 
 // Spacing
@@ -373,9 +373,9 @@ $border-color:                $gray-300 !default;
 // scss-docs-end border-variables
 
 // scss-docs-start border-radius-variables
-$border-radius:               .25rem !default;
+$border-radius:               .5rem !default;
 $border-radius-sm:            .2rem !default;
-$border-radius-lg:            .3rem !default;
+$border-radius-lg:            .75rem !default;
 $border-radius-pill:          50rem !default;
 // scss-docs-end border-radius-variables
 
@@ -588,7 +588,7 @@ $table-variants: (
 // scss-docs-start input-btn-variables
 $input-btn-padding-y:         .375rem !default;
 $input-btn-padding-x:         .75rem !default;
-$input-btn-font-family:       null !default;
+$input-btn-font-family:       $font-family-brand !default;
 $input-btn-font-size:         $font-size-base !default;
 $input-btn-line-height:       $line-height-base !default;
 
@@ -1088,7 +1088,7 @@ $card-spacer-y:                     $spacer !default;
 $card-spacer-x:                     $spacer !default;
 $card-title-spacer-y:               $spacer * .5 !default;
 $card-border-width:                 $border-width !default;
-$card-border-radius:                $border-radius !default;
+$card-border-radius:                $border-radius-lg !default;
 $card-border-color:                 rgba($black, .125) !default;
 $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
 $card-cap-padding-y:                $card-spacer-y * .5 !default;
