@@ -80,7 +80,9 @@
     - title: Spinners
     - title: Toasts
     - title: Tooltips
-
+- title: Icons
+  pages:
+    - title: Fluent UI Icons
 - title: Helpers
   pages:
     - title: Clearfix
