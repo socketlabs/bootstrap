@@ -1,5 +1,5 @@
 .bg-frost {
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(1rem);
   /* stylelint-disable declaration-no-important */
   &.bg-dark {
     background-color: rgba($dark, .5) !important;
