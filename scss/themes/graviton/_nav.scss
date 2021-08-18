@@ -1,0 +1,54 @@
+﻿footer {
+    .nav-link {
+        padding: 0rem .5rem !important;
+    }
+}
+
+.nav-date-dropdown {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+}
+
+.navbar {
+    padding: .75rem 1rem;
+}
+
+
+// Webmechanix styles
+.body-header {
+    .navbar {
+        background-color: rgba(255, 255 ,255 , .8);
+    }
+
+    .navbar-nav {
+        .nav-link {
+            &:focus {
+                color: $primary;
+            }
+
+            &:hover {
+                color: $primary;
+            }
+
+            &:active {
+                color: $primary;
+            }
+
+            line-height: 1.375rem;
+        }
+
+        .btn-sm {
+            margin-top: .25rem;
+            margin-bottom: .25rem;
+        }
+    }
+}
+
+.btn-login {
+    background-color: #d7d7d7;
+    border-color: #999 !important;
+    color: #666;
+    border: 2px solid;
+    padding: 3px 8px;
+}

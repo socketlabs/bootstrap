@@ -1,0 +1,93 @@
+﻿.modified.invalid {
+    @extend .is-invalid;
+}
+
+.modified.valid {
+    @extend .is-valid;
+}
+
+.validation-message {
+    @extend .invalid-feedback;
+    display: block;
+}
+
+.navbar-nav .nav-search {
+    background-color: rgba(230, 230, 230, 0.50);
+    border-color: rgba(230, 230, 230, 0.50) !important;
+    transition: $transition-base;
+    transition-property: background-color, border-color;
+    box-shadow: none !important;
+
+    &:visited, &:focus-within {
+        background-color: rgba(230, 230, 230, 0.50);
+        border-color: rgba(230, 230, 230, 0.50) !important;
+    }
+
+    &:hover {
+        background-color: rgba(222, 222, 222, 0.50);
+        border-color: rgba(222, 222, 222, 0.50) !important;
+    }
+
+    &:active, &:focus {
+        background-color: #fff;
+        border-color: #fff !important;
+    }
+}
+
+.completer-title {
+    font-family: $font-family-sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 100%;
+    display: block;
+    padding: 0 !important;
+    margin: 0 !important
+}
+
+.completer-dropdown, .completer-dropdown-holder, .completer-row, .completer-description {
+    width: 100% !important;
+}
+
+.completer-row {
+    padding: 1rem 1.25rem 1.25rem 1.25rem !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+}
+
+.completer-selected-row {
+    background-color: rgba(230, 230, 230, 0.50) !important;
+    color: #000 !important;
+}
+
+.completer-description {
+    font-size: $font-size-base !important;
+    font-family: $font-family-sans-serif;
+}
+
+.completer-dropdown {
+    position: relative;
+    top: 3.25rem;
+    box-shadow: 0 0.25rem 2rem 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    border-radius: 0.25rem !important;
+    padding: 0 !important;
+}
+
+.custom-control {
+    padding-left: 1.5rem;
+
+    .custom-control-label {
+        &::before {
+            left: -1.5rem;
+        }
+
+        &::after {
+            left: -1.5rem;
+        }
+    }
+}
+
+.form-label {
+    font-size: .75rem;
+    font-weight: 600;
+}

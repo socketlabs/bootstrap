@@ -1,2 +1,140 @@
 @import "fluent-ui-icons-filled";
 @import "fluent-ui-icons-regular";
+
+.text-break-all {
+  word-break: break-all;
+}
+
+.formatted-block {
+  padding: 4rem;
+  border-radius: 8px;
+  white-space: pre-line;
+  word-break: break-all;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 85%;
+
+  p {
+    margin: 0;
+  }
+}
+
+.pre-line {
+  white-space: pre-line;
+}
+
+.text-decorate {
+  text-decoration: underline;
+}
+
+.helpdoc {
+
+  h1, h2, h3, h4, h5, h6 {
+    position: relative;
+    /*&::before {
+            display: block;
+            content: " ";
+            margin-top: -5rem;
+            height: 5rem;
+            visibility: hidden;
+            pointer-events: none;
+        }*/
+
+    &:hover {
+      a {
+        opacity: 1;
+      }
+    }
+
+    a {
+      &:hover {
+        opacity: 1;
+      }
+
+      text-decoration: none;
+      font-size: 1.25rem;
+      position: absolute;
+      left: -2rem;
+      margin: .25rem 0;
+      opacity: 0;
+      width: 2rem;
+    }
+  }
+
+  h1 {
+    a.anchor-link {
+      line-height: 2.5rem;
+    }
+  }
+
+  h2 {
+    a.anchor-link {
+      line-height: 2rem;
+    }
+  }
+
+  h3 {
+    a.anchor-link {
+      line-height: 1.5rem;
+    }
+  }
+
+  h4 {
+    &.anchor-link {
+      line-height: 1rem;
+    }
+  }
+
+  h5 {
+    a.anchor-link {
+      line-height: 2.5rem;
+    }
+  }
+
+  h6 {
+    a.anchor-link {
+      line-height: 2.5rem;
+    }
+  }
+
+  &.helpdoc-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0rem;
+    z-index: 1300;
+    bottom: 0;
+    background-color: #fff;
+    overflow-y: auto;
+    width: 100%;
+    padding: 1rem;
+
+
+    @include media-breakpoint-up(sm) {
+      width: 32rem;
+      padding: 1.25rem;
+    }
+  }
+
+  .blockquote {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    border-left: 4px solid rgba(0, 0, 0, 0.25);
+    padding-left: 1rem;
+    line-height: 1.75rem;
+  }
+
+  code {
+    margin: .25rem;
+    padding: .1rem .5rem;
+    border-radius: .25rem;
+    background-color: $light;
+    color: $dark;
+    border: 1px solid $gray-400 !important;
+  }
+
+  pre code {
+    margin: 0;
+    width: 100%;
+    display: block;
+    padding: 1rem;
+  }
+}
