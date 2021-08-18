@@ -1,103 +1,106 @@
-﻿.sp-toggle-switch {
-    width: 5rem;
-    height: 2rem;
-    border-radius: 1rem;
-    box-shadow: inset 0 0 0px 1px rgba(0, 0, 0, 0.1);
-    transition: ease-in-out .3s;
-    transition-property: background-color;
-    background-color: $gray-600;
-    overflow: hidden;
-    cursor: pointer;
+/* stylelint-disable declaration-no-important, selector-no-qualifying-type, property-disallowed-list */
 
-    &.sp-checked {
-        background-color: $green;
+.sp-toggle-switch {
+  width: 5rem;
+  height: 2rem;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: $gray-600;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .1);
+  transition: ease-in-out .3s;
+  transition-property: background-color;
 
-        > .sp-switch {
-            transform: translateX(3rem);
-        }
-    }
+  &.sp-checked {
+    background-color: $green;
 
     > .sp-switch {
-        width: 1.8rem;
-        height: 1.8rem;
-        margin: .1rem;
-        background-color: $gray-200;
-        border-radius: 2rem;
-        box-shadow: inset 0 0 0 1px $gray-300;
-        transform: translateX(0);
-        transition: ease-in-out .3s;
-        transition-property: transform;
-
-        &::before {
-            content: 'Active';
-            font-size: .75rem;
-            font-weight: 600;
-            position: absolute;
-            right: 2.2rem;
-            line-height: 2rem;
-            color: #fff;
-            z-index: -100;
-            margin: -.1rem;
-        }
-
-        &::after {
-            content: 'Inactive';
-            font-size: .75rem;
-            font-weight: 600;
-            position: absolute;
-            left: 2rem;
-            line-height: 2rem;
-            color: #fff;
-            z-index: -100;
-            margin: -.1rem;
-        }
+      transform: translateX(3rem);
     }
+  }
+
+  > .sp-switch {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin: .1rem;
+    background-color: $gray-200;
+    border-radius: 2rem;
+    box-shadow: inset 0 0 0 1px $gray-300;
+    transition: ease-in-out .3s;
+    transition-property: transform;
+    transform: translateX(0);
+
+    &::before {
+      position: absolute;
+      right: 2.2rem;
+      z-index: -100;
+      margin: -.1rem;
+      font-size: .75rem;
+      font-weight: 600;
+      line-height: 2rem;
+      color: #fff;
+      content: "Active";
+    }
+
+    &::after {
+      position: absolute;
+      left: 2rem;
+      z-index: -100;
+      margin: -.1rem;
+      font-size: .75rem;
+      font-weight: 600;
+      line-height: 2rem;
+      color: #fff;
+      content: "Inactive";
+    }
+  }
 }
 
 .dropdown-menu-notifications {
-    padding: 0;
-    border: 0;
-    min-width: 25rem;
+  min-width: 25rem;
+  padding: 0;
+  border: 0;
 
-    .list-group-item {
-        border: 1px solid rgba(0, 0, 0, 0.15) !important;
-    }
+  .list-group-item {
+    border: 1px solid rgba(0, 0, 0, .15) !important;
+  }
 }
 
 .custom-file-label {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .btn-google-login {
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+  font-family: Roboto, Arial, sans-serif;
+  color: $dark;
+  border-radius: .6rem;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2);
+
+  &:hover {
     color: $dark;
-    font-family: Roboto, Arial, sans-serif;
-    border-radius: .6rem;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .14), 0 2px 4px -2px rgba(0, 0, 0, .12), 0 1px 7px 0 rgba(0, 0, 0, .2);
+  }
 
-    &:hover {
-        color: $dark;
-        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 2px 4px -2px rgba(0, 0, 0, 0.12), 0 1px 7px 0 rgba(0, 0, 0, 0.2);
-    }
-
-
-    img {
-        width: 2rem;
-        height: 2rem;
-        margin-right: 1rem;
-    }
+  img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+  }
 }
-
 
 .copy {
-    position: relative;
+  position: relative;
 
-    .btn-copy {
-        position: absolute;
-        top: -3rem;
-        right: -3rem;
-    }
+  .btn-copy {
+    position: absolute;
+    top: -3rem;
+    right: -3rem;
+  }
 }
 
-.btn-primary, .badge-primary {
-    color: #fff !important;
+.btn-primary,
+.badge-primary {
+  color: #fff !important;
 }
+
+/* stylelint-enable */

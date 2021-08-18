@@ -1,3 +1,5 @@
+/* stylelint-disable declaration-no-important, selector-no-qualifying-type, property-disallowed-list */
+
 @import "fluent-ui-icons-filled";
 @import "fluent-ui-icons-regular";
 
@@ -7,11 +9,11 @@
 
 .formatted-block {
   padding: 4rem;
-  border-radius: 8px;
-  white-space: pre-line;
-  word-break: break-all;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 85%;
+  word-break: break-all;
+  white-space: pre-line;
+  border-radius: 8px;
 
   p {
     margin: 0;
@@ -28,16 +30,13 @@
 
 .helpdoc {
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     position: relative;
-    /*&::before {
-            display: block;
-            content: " ";
-            margin-top: -5rem;
-            height: 5rem;
-            visibility: hidden;
-            pointer-events: none;
-        }*/
 
     &:hover {
       a {
@@ -49,14 +48,14 @@
       &:hover {
         opacity: 1;
       }
-
-      text-decoration: none;
-      font-size: 1.25rem;
       position: absolute;
       left: -2rem;
-      margin: .25rem 0;
-      opacity: 0;
       width: 2rem;
+      margin: .25rem 0;
+      font-size: 1.25rem;
+
+      text-decoration: none;
+      opacity: 0;
     }
   }
 
@@ -99,13 +98,13 @@
   &.helpdoc-sidebar {
     position: fixed;
     top: 0;
-    right: 0rem;
-    z-index: 1300;
+    right: 0;
     bottom: 0;
-    background-color: #fff;
-    overflow-y: auto;
+    z-index: 1300;
     width: 100%;
     padding: 1rem;
+    overflow-y: auto;
+    background-color: #fff;
 
 
     @include media-breakpoint-up(sm) {
@@ -115,26 +114,27 @@
   }
 
   .blockquote {
+    padding-left: 1rem;
     margin-bottom: 1rem;
     font-size: 1.25rem;
-    border-left: 4px solid rgba(0, 0, 0, 0.25);
-    padding-left: 1rem;
     line-height: 1.75rem;
+    border-left: 4px solid rgba(0, 0, 0, .25);
   }
 
   code {
-    margin: .25rem;
     padding: .1rem .5rem;
-    border-radius: .25rem;
-    background-color: $light;
+    margin: .25rem;
     color: $dark;
+    background-color: $light;
     border: 1px solid $gray-400 !important;
+    border-radius: .25rem;
   }
 
   pre code {
-    margin: 0;
-    width: 100%;
     display: block;
+    width: 100%;
     padding: 1rem;
+    margin: 0;
   }
 }
+/* stylelint-enable */

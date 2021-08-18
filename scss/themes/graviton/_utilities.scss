@@ -16,9 +16,9 @@
   &.bg-brand {
     background-color: rgba($brand, .5) !important;
   }
-  /* stylelint-enable */
 }
 
 .shadow-1 {
-  box-shadow: 0px 4px 16px 1px rgba(0, 0, 0, 0.3)
+  box-shadow: 0 4px 16px 1px rgba(0, 0, 0, .3);
 }
+/* stylelint-enable */

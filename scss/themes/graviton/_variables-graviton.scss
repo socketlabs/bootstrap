@@ -4,10 +4,10 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Theme variabls
-$sidebar-width: 16rem;
-$body-margin-left: $sidebar-width;
-$body-margin-top: 4rem;
-$body-padding-top: 15px;
+$sidebar-width: 16rem !default;
+$body-margin-left: $sidebar-width !default;
+$body-margin-top: 4rem !default;
+$body-padding-top: 15px !default;
 
 // Color system
 // scss-docs-start gray-color-variables
@@ -100,7 +100,7 @@ $theme-colors: (
 // scss-docs-start theme-colors-rgb
 $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value") !default;
 // scss-docs-end theme-colors-rgb
-                                
+
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
 $min-contrast-ratio:   3 !default;
@@ -328,7 +328,7 @@ $cyans: (
   "cyan-700": $cyan-700,
   "cyan-800": $cyan-800,
   "cyan-900": $cyan-900
-) !default;        
+) !default;
 // fusv-enable
 
 // Characters which are escaped by the escape-svg function
@@ -893,7 +893,7 @@ $input-height-lg:                       add($input-line-height * 1em, add($input
 
 $input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
-$form-color-width:                      3rem !default;                                                      
+$form-color-width:                      3rem !default;
 // scss-docs-end form-input-variables
 
 // scss-docs-start form-check-variables

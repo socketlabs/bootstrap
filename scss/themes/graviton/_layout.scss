@@ -1,82 +1,91 @@
+/* stylelint-disable
+    property-disallowed-list,
+    function-disallowed-list,
+    selector-max-id
+*/
+
+
 .dropdown-item {
-    .la {
-        margin-right: $spacer;
-    }
+  .la {
+    margin-right: $spacer;
+  }
 }
 
 .img-profile {
-    height: 2rem;
-    width: 2rem;
-    line-height: 2rem;
-    font-size: 1.5rem;
-    text-align: center;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
 }
 
 .img-profile-lg {
-    height: 4rem;
-    width: 4rem;
-    line-height: 4rem;
-    font-size: 2rem;
-    text-align: center;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  line-height: 4rem;
+  text-align: center;
 }
 
 .img-profile-xl {
-    height: 10rem;
-    width: 10rem;
-    line-height: 10rem;
-    font-size: 5rem;
-    text-align: center;
+  width: 10rem;
+  height: 10rem;
+  font-size: 5rem;
+  line-height: 10rem;
+  text-align: center;
 }
 
 .txt-profile {
-    line-height: 4rem;
-    display: block;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    font-size: 2rem;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  line-height: 4rem;
+  border-radius: 50%;
 }
 
 .chart-container {
-    position: relative;
-    margin: auto;
-    height: 80vh;
-    width: 80vw;
+  position: relative;
+  width: 80vw;
+  height: 80vh;
+  margin: auto;
 }
 
 .absolute-bottom {
-    position: absolute;
-    bottom: 0;
+  position: absolute;
+  bottom: 0;
 }
 
 .login-container {
-    /*padding: 0 2rem;
-    color: $light;*/
-    max-width: 32rem;
-    padding: 2rem;
-    width: 100%;
+  width: 100%;
 
-    .logo {
-        width: 100%;
-        height: auto;
-        max-width: 16rem;
-        margin: 0 auto;
-        margin-bottom: 2rem;
-    }
+  /* padding: 0 2rem;
+    color: $light; */
+  max-width: 32rem;
+  padding: 2rem;
+
+  .logo {
+    width: 100%;
+    max-width: 16rem;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
 }
 
 @include media-breakpoint-up(md) {
-    .login-container {
-        padding: 3rem;
-    }
+  .login-container {
+    padding: 3rem;
+  }
 }
 
 .motd {
-    color: #fff;
-    max-width: 48rem;
-    width: 100%;
+  width: 100%;
+  max-width: 48rem;
+  color: #fff;
 }
-/*@include media-breakpoint-up(md) {
+
+/* @include media-breakpoint-up(md) {
     .motd-container, .login-container {
         height: 100%;
         padding: 0 4rem;
@@ -87,52 +96,54 @@
     .motd-container, .login-container {
         padding: 0 8rem;
     }
-}*/
+} */
 .motd-background {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.33) 20%, rgba(0, 0, 0, 0.50) 50%, rgba(0, 0, 0, 0.67) 80%, rgba(0, 0, 0, 0.75) 100%), url('/images/christopher-gower-289516-unsplash.jpg');
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .33) 20%, rgba(0, 0, 0, .5) 50%, rgba(0, 0, 0, .67) 80%, rgba(0, 0, 0, .75) 100%), url("/images/christopher-gower-289516-unsplash.jpg");
+  background-size: cover;
 }
 
 .cursor-link {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .spinner {
-    width: 10rem;
-    height: 10rem;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 10rem;
+  height: 10rem;
+  transform: translate(-50%, -50%);
 }
 
 @include media-breakpoint-up(sm) {
-    .spinner {
-        left: calc(8rem + 50%);
-    }
+  .spinner {
+    left: calc(8rem + 50%);
+  }
 }
 
 
 #blazor-error-ui {
-    background: lightyellow;
-    bottom: 0;
-    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
-    display: none;
-    left: 0;
-    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  width: 100%;
+  padding: .6rem 1.25rem .7rem;
+  background: $warning;
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, .2);
 }
 
 #blazor-error-ui .dismiss {
-    cursor: pointer;
-    position: absolute;
-    right: 0.75rem;
-    top: 0.5rem;
+  position: absolute;
+  top: .5rem;
+  right: .75rem;
+  cursor: pointer;
 }
+
+/* stylelint-enable */
