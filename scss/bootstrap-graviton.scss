@@ -9,11 +9,18 @@
 // Configuration
 @import "functions";
 @import "themes/graviton/variables-graviton";
-@import "themes/graviton/type";
-@import "themes/graviton/utilities";
-@import "themes/graviton/color";
 @import "mixins";
 @import "utilities";
+
+// Theme layout & components
+@import "themes/graviton/sidebar";
+@import "themes/graviton/layout";
+@import "themes/graviton/type";
+@import "themes/graviton/forms";
+@import "themes/graviton/nav";
+@import "themes/graviton/utilities";
+@import "themes/graviton/ui-components";
+@import "themes/graviton/color";
 
 // Layout & components
 @import "root";

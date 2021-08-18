@@ -6,6 +6,10 @@
     <ThemeRoot>.</ThemeRoot>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="site\content\docs\5.0\" />
+  </ItemGroup>
+
 
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(ThemeRoot)node_modules') ">
