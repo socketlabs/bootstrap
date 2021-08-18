@@ -760,7 +760,7 @@ class BaseComponent {
 
 
   static getInstance(element) {
-    return Data.get(element, this.DATA_KEY);
+    return Data.get(getElement(element), this.DATA_KEY);
   }
 
   static getOrCreateInstance(element, config = {}) {
@@ -821,37 +821,26 @@ class Alert extends BaseComponent {
   } // Public
 
 
-  close(element) {
-    const rootElement = element ? this._getRootElement(element) : this._element;
+  close() {
+    const closeEvent = EventHandler.trigger(this._element, EVENT_CLOSE);
 
-    const customEvent = this._triggerCloseEvent(rootElement);
-
-    if (customEvent === null || customEvent.defaultPrevented) {
+    if (closeEvent.defaultPrevented) {
       return;
     }
 
-    this._removeElement(rootElement);
+    this._element.classList.remove(CLASS_NAME_SHOW$9);
+
+    const isAnimated = this._element.classList.contains(CLASS_NAME_FADE$6);
+
+    this._queueCallback(() => this._destroyElement(), this._element, isAnimated);
   } // Private
 
 
-  _getRootElement(element) {
-    return getElementFromSelector(element) || element.closest(`.${CLASS_NAME_ALERT}`);
-  }
+  _destroyElement() {
+    this._element.remove();
 
-  _triggerCloseEvent(element) {
-    return EventHandler.trigger(element, EVENT_CLOSE);
-  }
-
-  _removeElement(element) {
-    element.classList.remove(CLASS_NAME_SHOW$9);
-    const isAnimated = element.classList.contains(CLASS_NAME_FADE$6);
-
-    this._queueCallback(() => this._destroyElement(element), element, isAnimated);
-  }
-
-  _destroyElement(element) {
-    element.remove();
-    EventHandler.trigger(element, EVENT_CLOSED);
+    EventHandler.trigger(this._element, EVENT_CLOSED);
+    this.dispose();
   } // Static
 
 
@@ -859,20 +848,16 @@ class Alert extends BaseComponent {
     return this.each(function () {
       const data = Alert.getOrCreateInstance(this);
 
-      if (config === 'close') {
-        data[config](this);
+      if (typeof config !== 'string') {
+        return;
       }
+
+      if (data[config] === undefined || config.startsWith('_') || config === 'constructor') {
+        throw new TypeError(`No method named "${config}"`);
+      }
+
+      data[config](this);
     });
-  }
-
-  static handleDismiss(alertInstance) {
-    return function (event) {
-      if (event) {
-        event.preventDefault();
-      }
-
-      alertInstance.close(this);
-    };
   }
 
 }
@@ -883,7 +868,19 @@ class Alert extends BaseComponent {
  */
 
 
-EventHandler.on(document, EVENT_CLICK_DATA_API$7, SELECTOR_DISMISS, Alert.handleDismiss(new Alert()));
+EventHandler.on(document, EVENT_CLICK_DATA_API$7, SELECTOR_DISMISS, function (event) {
+  if (['A', 'AREA'].includes(this.tagName)) {
+    event.preventDefault();
+  }
+
+  if (isDisabled(this)) {
+    return;
+  }
+
+  const target = getElementFromSelector(this) || this.closest(`.${CLASS_NAME_ALERT}`);
+  const alert = Alert.getOrCreateInstance(target);
+  alert.close();
+});
 /**
  * ------------------------------------------------------------------------
  * jQuery
@@ -2526,6 +2523,7 @@ class ScrollBarHelper {
  * --------------------------------------------------------------------------
  */
 const Default$6 = {
+  className: 'modal-backdrop',
   isVisible: true,
   // if false, we use the backdrop helper without adding any element to the dom
   isAnimated: false,
@@ -2534,13 +2532,13 @@ const Default$6 = {
   clickCallback: null
 };
 const DefaultType$6 = {
+  className: 'string',
   isVisible: 'boolean',
   isAnimated: 'boolean',
   rootElement: '(element|string)',
   clickCallback: '(function|null)'
 };
 const NAME$7 = 'backdrop';
-const CLASS_NAME_BACKDROP = 'modal-backdrop';
 const CLASS_NAME_FADE$5 = 'fade';
 const CLASS_NAME_SHOW$6 = 'show';
 const EVENT_MOUSEDOWN = `mousedown.bs.${NAME$7}`;
@@ -2589,7 +2587,7 @@ class Backdrop {
   _getElement() {
     if (!this._element) {
       const backdrop = document.createElement('div');
-      backdrop.className = CLASS_NAME_BACKDROP;
+      backdrop.className = this._config.className;
 
       if (this._config.isAnimated) {
         backdrop.classList.add(CLASS_NAME_FADE$5);
@@ -3110,6 +3108,7 @@ const DefaultType$4 = {
   scroll: 'boolean'
 };
 const CLASS_NAME_SHOW$4 = 'show';
+const CLASS_NAME_BACKDROP = 'offcanvas-backdrop';
 const OPEN_SELECTOR = '.offcanvas.show';
 const EVENT_SHOW$2 = `show${EVENT_KEY$5}`;
 const EVENT_SHOWN$2 = `shown${EVENT_KEY$5}`;
@@ -3251,6 +3250,7 @@ class Offcanvas extends BaseComponent {
 
   _initializeBackDrop() {
     return new Backdrop({
+      className: CLASS_NAME_BACKDROP,
       isVisible: this._config.backdrop,
       isAnimated: true,
       rootElement: this._element.parentNode,
@@ -4325,6 +4325,7 @@ const SELECTOR_NAV_LIST_GROUP$1 = '.nav, .list-group';
 const SELECTOR_NAV_LINKS = '.nav-link';
 const SELECTOR_NAV_ITEMS = '.nav-item';
 const SELECTOR_LIST_ITEMS = '.list-group-item';
+const SELECTOR_LINK_ITEMS = `${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}, .${CLASS_NAME_DROPDOWN_ITEM}`;
 const SELECTOR_DROPDOWN$1 = '.dropdown';
 const SELECTOR_DROPDOWN_TOGGLE$1 = '.dropdown-toggle';
 const METHOD_OFFSET = 'offset';
@@ -4340,7 +4341,6 @@ class ScrollSpy extends BaseComponent {
     super(element);
     this._scrollElement = this._element.tagName === 'BODY' ? window : this._element;
     this._config = this._getConfig(config);
-    this._selector = `${this._config.target} ${SELECTOR_NAV_LINKS}, ${this._config.target} ${SELECTOR_LIST_ITEMS}, ${this._config.target} .${CLASS_NAME_DROPDOWN_ITEM}`;
     this._offsets = [];
     this._targets = [];
     this._activeTarget = null;
@@ -4368,7 +4368,7 @@ class ScrollSpy extends BaseComponent {
     this._offsets = [];
     this._targets = [];
     this._scrollHeight = this._getScrollHeight();
-    const targets = SelectorEngine.find(this._selector);
+    const targets = SelectorEngine.find(SELECTOR_LINK_ITEMS, this._config.target);
     targets.map(element => {
       const targetSelector = getSelectorFromElement(element);
       const target = targetSelector ? SelectorEngine.findOne(targetSelector) : null;
@@ -4400,20 +4400,7 @@ class ScrollSpy extends BaseComponent {
       ...Manipulator.getDataAttributes(this._element),
       ...(typeof config === 'object' && config ? config : {})
     };
-
-    if (typeof config.target !== 'string' && isElement(config.target)) {
-      let {
-        id
-      } = config.target;
-
-      if (!id) {
-        id = getUID(NAME$2);
-        config.target.id = id;
-      }
-
-      config.target = `#${id}`;
-    }
-
+    config.target = getElement(config.target) || document.documentElement;
     typeCheckConfig(NAME$2, config, DefaultType$1);
     return config;
   }
@@ -4473,16 +4460,13 @@ class ScrollSpy extends BaseComponent {
 
     this._clear();
 
-    const queries = this._selector.split(',').map(selector => `${selector}[data-bs-target="${target}"],${selector}[href="${target}"]`);
-
-    const link = SelectorEngine.findOne(queries.join(','));
+    const queries = SELECTOR_LINK_ITEMS.split(',').map(selector => `${selector}[data-bs-target="${target}"],${selector}[href="${target}"]`);
+    const link = SelectorEngine.findOne(queries.join(','), this._config.target);
+    link.classList.add(CLASS_NAME_ACTIVE$1);
 
     if (link.classList.contains(CLASS_NAME_DROPDOWN_ITEM)) {
       SelectorEngine.findOne(SELECTOR_DROPDOWN_TOGGLE$1, link.closest(SELECTOR_DROPDOWN$1)).classList.add(CLASS_NAME_ACTIVE$1);
-      link.classList.add(CLASS_NAME_ACTIVE$1);
     } else {
-      // Set triggered link as active
-      link.classList.add(CLASS_NAME_ACTIVE$1);
       SelectorEngine.parents(link, SELECTOR_NAV_LIST_GROUP$1).forEach(listGroup => {
         // Set triggered links parents as active
         // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
@@ -4500,7 +4484,7 @@ class ScrollSpy extends BaseComponent {
   }
 
   _clear() {
-    SelectorEngine.find(this._selector).filter(node => node.classList.contains(CLASS_NAME_ACTIVE$1)).forEach(node => node.classList.remove(CLASS_NAME_ACTIVE$1));
+    SelectorEngine.find(SELECTOR_LINK_ITEMS, this._config.target).filter(node => node.classList.contains(CLASS_NAME_ACTIVE$1)).forEach(node => node.classList.remove(CLASS_NAME_ACTIVE$1));
   } // Static
 
 
