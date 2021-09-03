@@ -4,6 +4,9 @@
     selector-max-id
 */
 
+body {
+  image-rendering: -webkit-optimize-contrast; // Fixes blurry downsized images in webkit browsers.
+}
 
 .dropdown-item {
   .la {
