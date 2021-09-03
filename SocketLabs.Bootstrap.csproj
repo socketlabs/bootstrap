@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="node_modules\**" />
+    <Compile Remove="resources\**" />
+    <EmbeddedResource Remove="node_modules\**" />
+    <EmbeddedResource Remove="resources\**" />
+    <None Remove="node_modules\**" />
+    <None Remove="resources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="site\content\docs\5.0\" />
   </ItemGroup>
 
