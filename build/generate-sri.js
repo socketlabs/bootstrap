@@ -5,8 +5,8 @@
  * Remember to use the same vendor files as the CDN ones,
  * otherwise the hashes won't match!
  *
- * Copyright 2017-2021 The Bootstrap Authors
- * Copyright 2017-2021 Twitter, Inc.
+ * Copyright 2017-2022 The Bootstrap Authors
+ * Copyright 2017-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
@@ -47,7 +47,7 @@ const files = [
   }
 ]
 
-files.forEach(file => {
+for (const file of files) {
   fs.readFile(file.file, 'utf8', (err, data) => {
     if (err) {
       throw err
@@ -61,4 +61,4 @@ files.forEach(file => {
 
     sh.sed('-i', new RegExp(`^(\\s+${file.configPropertyName}:\\s+["'])\\S*(["'])`), `$1${integrity}$2`, configFile)
   })
-})
+}

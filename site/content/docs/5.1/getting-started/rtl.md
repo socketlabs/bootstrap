@@ -46,10 +46,10 @@ You can see the above requirements reflected in this modified RTL starter templa
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{< param "cdn.css_rtl" >}}" integrity="{{< param "cdn.css_rtl_hash" >}}" crossorigin="anonymous">
 
-    <title>مرحبا بالعالم!</title>
+    <title>مرحبًا بالعالم!</title>
   </head>
   <body>
-    <h1>مرحبا بالعالم!</h1>
+    <h1>مرحبًا بالعالم!</h1>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -111,7 +111,7 @@ dt {
 
 In the case you're using a custom font, be aware that not all fonts support the non-Latin alphabet. To switch from Pan-European to Arabic family, you may need to use `/*rtl:insert: {value}*/` in your font stack to modify the names of font families.
 
-For example, to switch from `Helvetica Neue Webfont` for LTR to `Helvetica Neue Arabic` for RTL, your Sass code look like this:
+For example, to switch from `Helvetica Neue` font for LTR to `Helvetica Neue Arabic` for RTL, your Sass code could look like this:
 
 ```scss
 $font-family-sans-serif:
