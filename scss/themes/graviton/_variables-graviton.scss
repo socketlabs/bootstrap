@@ -352,6 +352,7 @@ $enable-transitions:          true !default;
 $enable-reduced-motion:       true !default;
 $enable-smooth-scroll:        true !default;
 $enable-grid-classes:         true !default;
+                                            
 $enable-cssgrid:              false !default;
 $enable-button-pointers:      true !default;
 $enable-rfs:                  true !default;
@@ -668,6 +669,8 @@ $blockquote-footer-font-size: $small-font-size !default;
 
 $hr-margin-y:                 $spacer !default;
 $hr-color:                    inherit !default;
+$hr-bg-color:                 currentColor !default;
+$hr-border-width:             0 !default;
 $hr-height:                   $border-width !default;
 $hr-opacity:                  .25 !default;
 
@@ -992,10 +995,12 @@ $form-select-focus-box-shadow:    $input-btn-focus-box-shadow !default;
 $form-select-padding-y-sm:        $input-padding-y-sm !default;
 $form-select-padding-x-sm:        $input-padding-x-sm !default;
 $form-select-font-size-sm:        $input-font-size-sm !default;
+                                                                   
 
 $form-select-padding-y-lg:        $input-padding-y-lg !default;
 $form-select-padding-x-lg:        $input-padding-x-lg !default;
 $form-select-font-size-lg:        $input-font-size-lg !default;
+                                                                   
 
 $form-select-transition:          $input-transition !default;
 // scss-docs-end form-select-variables
@@ -1076,10 +1081,10 @@ $form-validation-states: (
 $zindex-dropdown:                   1000 !default;
 $zindex-sticky:                     1020 !default;
 $zindex-fixed:                      1030 !default;
-$zindex-modal-backdrop:             1040 !default;
 $zindex-offcanvas-backdrop:         1040 !default;
-$zindex-offcanvas:                  1050 !default;
-$zindex-modal:                      1060 !default;
+$zindex-offcanvas:                  1045 !default;
+$zindex-modal-backdrop:             1050 !default;
+$zindex-modal:                      1055 !default;
 $zindex-popover:                    1070 !default;
 $zindex-tooltip:                    1080 !default;
 // scss-docs-end zindex-stack
@@ -1255,6 +1260,7 @@ $pagination-border-radius-lg:       $border-radius-lg !default;
 $placeholder-opacity-max:           .5 !default;
 $placeholder-opacity-min:           .2 !default;
 // scss-docs-end placeholders
+
 // Cards
 
 // scss-docs-start card-variables
@@ -1262,6 +1268,7 @@ $card-spacer-y:                     $spacer !default;
 $card-spacer-x:                     $spacer !default;
 $card-title-spacer-y:               $spacer * .5 !default;
 $card-border-width:                 $border-width !default;
+                                                                
 $card-border-radius:                $border-radius !default;
 $card-box-shadow:                   null !default;
 $card-border-color:                 rgba($black, .125) !default;
