@@ -1,3 +1,5 @@
+@import "socketlabs";
+
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -12,21 +14,23 @@ $body-padding-top: 15px !default;
 // Color system
 // scss-docs-start gray-color-variables
 $white: #fff !default;
-$gray-100: #fafafa !default;
-$gray-200: #ededed !default;
-$gray-300: #e8e8e8 !default;
-$gray-400: #d6d6d6 !default;
-$gray-500: #c4c4c4 !default;
-$gray-600: #5e5e5e !default;
-$gray-700: #363636 !default;
-$gray-800: #242424 !default;
-$gray-900: #131313 !default;
+$gray-50: $sl-gray-50 !default;
+$gray-100: $sl-gray-100 !default;
+$gray-200: $sl-gray-200 !default;
+$gray-300: $sl-gray-300 !default;
+$gray-400: $sl-gray-400 !default;
+$gray-500: $sl-gray-500 !default;
+$gray-600: $sl-gray-600 !default;
+$gray-700: $sl-gray-700 !default;
+$gray-800: $sl-gray-800 !default;
+$gray-900: $sl-gray-900 !default;
 $black:    #000 !default;
 // scss-docs-end gray-color-variables
 
 // fusv-disable
 // scss-docs-start gray-colors-map
 $grays: (
+  "50":  $gray-50,
   "100": $gray-100,
   "200": $gray-200,
   "300": $gray-300,
@@ -41,16 +45,19 @@ $grays: (
 // fusv-enable
 
 // scss-docs-start color-variables
-$blue:    #181a3c !default;
+
+
+$blue: $sl-primary !default;
 $indigo:  #4600f0 !default;
 $purple:  #60298a !default;
 $pink:    #ff8088 !default;
-$red:     #fa290c !default;
-$orange:  #f97000 !default;
-$yellow:  #fab70c !default;
-$green:   #05a62a !default;
+$red: $sl-poor !default;
+$orange: $sl-orange !default;
+$yellow: $sl-warning !default;
+$green: $sl-success !default;
 $teal:    #22eef0 !default;
 $cyan:    #43a9e0 !default;
+
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -96,6 +103,46 @@ $theme-colors: (
   "brand":      $brand
 ) !default;
 // scss-docs-end theme-colors-map
+
+// scss-docs-start theme-colors-light-map
+$theme-colors-light: (
+  "primary":    $sl-sky,
+  "secondary":  $sl-light-secondary,
+  "success":    $sl-light-success,
+  "info":       $sl-light-info,
+  "warning":    $sl-light-warning,
+  "danger":     $sl-light-danger,
+) !default;
+// scss-docs-end theme-colors-light-map
+
+
+// scss-docs-start theme-colors-light-map
+$theme-colors-badge: (
+  "primary":    (
+    "background":   $sl-sky,
+    "color":    $sl-primary,
+  ),
+  "secondary":  (
+    "background":   $sl-light-secondary,
+    "color":    $sl-dark-secondary,
+  ),
+  "success":    (
+    "background":   $sl-light-success,
+    "color":    $sl-dark-success,
+  ),
+  "info":       (
+    "background":   $sl-light-info,
+    "color":    $sl-dark-info,
+  ),
+  "warning":    (
+    "background":   $sl-light-warning,
+    "color":    $sl-dark-warning,
+  ),
+  "danger":     (
+    "background":   $sl-light-danger,
+    "color":    $sl-dark-danger,
+  ),
+) !default;
 
 // scss-docs-start theme-colors-rgb
 $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value") !default;
@@ -380,7 +427,7 @@ $gradient: linear-gradient(318deg, rgba($black, .15), rgba($white, 0)) !default;
 // You can add more entries to the $spacers map, should you need more variation.
 
 // scss-docs-start spacer-variables-maps
-$spacer: 1rem !default;
+$spacer: 0.625rem !default;
 $spacers: (
   0: 0,
   1: $spacer * .25,
@@ -410,7 +457,7 @@ $position-values: (
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-color:                $gray-800 !default;
 $body-text-align:           null !default;
 
 // Utilities maps
@@ -536,7 +583,7 @@ $border-color:                $gray-300 !default;
 // scss-docs-end border-variables
 
 // scss-docs-start border-radius-variables
-$border-radius:               .333rem !default;
+$border-radius:               .1875rem !default;
 $border-radius-sm:            .2rem !default;
 $border-radius-lg:            .5rem !default;
 $border-radius-pill:          50rem !default;
@@ -592,9 +639,10 @@ $font-family-code:            var(--#{$variable-prefix}font-monospace) !default;
 // $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings and margins
 // $font-size-base affects the font size of the body text
 $font-size-root:              null !default;
-$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-base:              .875rem !default; // 14px as base font size
 $font-size-sm:                $font-size-base * .875 !default;
 $font-size-lg:                $font-size-base * 1.25 !default;
+
 
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
@@ -1301,9 +1349,9 @@ $accordion-body-padding-x:                $accordion-padding-x !default;
 $accordion-button-padding-y:              $accordion-padding-y !default;
 $accordion-button-padding-x:              $accordion-padding-x !default;
 $accordion-button-color:                  $accordion-color !default;
-$accordion-button-bg:                     $accordion-bg !default;
+$accordion-button-bg:                     $gray-100 !default;
 $accordion-transition:                    $btn-transition, border-radius .15s ease !default;
-$accordion-button-active-bg:              tint-color($component-active-bg, 90%) !default;
+$accordion-button-active-bg:              $accordion-button-bg; //tint-color($component-active-bg, 90%) !default;
 $accordion-button-active-color:           shade-color($primary, 10%) !default;
 
 $accordion-button-focus-border-color:     $input-focus-border-color !default;
@@ -1351,7 +1399,7 @@ $form-feedback-tooltip-border-radius: $tooltip-border-radius !default;
 // Popovers
 
 // scss-docs-start popover-variables
-$popover-font-size:                 $font-size-sm !default;
+$popover-font-size:                 $font-size-base !default;
 $popover-bg:                        $white !default;
 $popover-max-width:                 276px !default;
 $popover-border-width:              $border-width !default;
@@ -1360,7 +1408,7 @@ $popover-border-radius:             $border-radius !default;
 $popover-inner-border-radius:       subtract($popover-border-radius, $popover-border-width) !default;
 $popover-box-shadow:                $box-shadow !default;
 
-$popover-header-bg:                 shade-color($popover-bg, 6%) !default;
+$popover-header-bg:                 $gray-100 !default; //shade-color($popover-bg, 6%) !default;
 $popover-header-color:              $headings-color !default;
 $popover-header-padding-y:          .5rem !default;
 $popover-header-padding-x:          $spacer !default;
@@ -1401,11 +1449,11 @@ $toast-header-border-color:         rgba(0, 0, 0, .05) !default;
 // Badges
 
 // scss-docs-start badge-variables
-$badge-font-size:                   .75em !default;
+$badge-font-size:                   .6875rem !default;
 $badge-font-weight:                 $font-weight-bold !default;
 $badge-color:                       $white !default;
-$badge-padding-y:                   .35em !default;
-$badge-padding-x:                   .65em !default;
+$badge-padding-y:                   .375rem !default;
+$badge-padding-x:                   .5625rem !default;
 $badge-border-radius:               $border-radius !default;
 // scss-docs-end badge-variables
 
@@ -1458,7 +1506,7 @@ $modal-scale-transform:             scale(1.02) !default;
 // Define alert colors, border radius, and padding.
 
 // scss-docs-start alert-variables
-$alert-padding-y:               $spacer !default;
+$alert-padding-y:               .4rem !default; //$spacer !default;
 $alert-padding-x:               $spacer !default;
 $alert-margin-bottom:           1rem !default;
 $alert-border-radius:           $border-radius !default;
@@ -1592,11 +1640,13 @@ $carousel-dark-control-icon-filter:  invert(1) grayscale(100) !default;
 // Spinners
 
 // scss-docs-start spinner-variables
+$spinner-main-width:      4rem !default;
+$spinner-main-height:     $spinner-main-width !default;
 $spinner-width:           2rem !default;
 $spinner-height:          $spinner-width !default;
 $spinner-vertical-align:  -.125em !default;
-$spinner-border-width:    .25em !default;
-$spinner-animation-speed: .75s !default;
+$spinner-border-width:    .3em !default;
+$spinner-animation-speed: 1.5s !default;
 
 $spinner-width-sm:        1rem !default;
 $spinner-height-sm:       $spinner-width-sm !default;

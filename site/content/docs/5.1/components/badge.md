@@ -13,12 +13,12 @@ Badges scale to match the size of the immediate parent element by using relative
 ### Headings
 
 {{< example >}}
-<h1>Example heading <span class="badge bg-secondary">New</span></h1>
-<h2>Example heading <span class="badge bg-secondary">New</span></h2>
-<h3>Example heading <span class="badge bg-secondary">New</span></h3>
-<h4>Example heading <span class="badge bg-secondary">New</span></h4>
-<h5>Example heading <span class="badge bg-secondary">New</span></h5>
-<h6>Example heading <span class="badge bg-secondary">New</span></h6>
+<h1>Example heading <span class="badge badge-secondary">New</span></h1>
+<h2>Example heading <span class="badge badge-secondary">New</span></h2>
+<h3>Example heading <span class="badge badge-secondary">New</span></h3>
+<h4>Example heading <span class="badge badge-secondary">New</span></h4>
+<h5>Example heading <span class="badge badge-secondary">New</span></h5>
+<h6>Example heading <span class="badge badge-secondary">New</span></h6>
 {{< /example >}}
 
 ### Buttons
@@ -27,7 +27,7 @@ Badges can be used as part of links or buttons to provide a counter.
 
 {{< example >}}
 <button type="button" class="btn btn-primary">
-  Notifications <span class="badge bg-secondary">4</span>
+  Notifications <span class="badge badge-secondary">4</span>
 </button>
 {{< /example >}}
 
@@ -60,14 +60,23 @@ You can also replace the `.badge` class with a few more utilities without a coun
 </button>
 {{< /example >}}
 
-## Background colors
+## Dark Background colors
 
 Use our background utility classes to quickly change the appearance of a badge. Please note that when using Bootstrap's default `.bg-light`, you'll likely need a text color utility like `.text-dark` for proper styling. This is because background utilities do not set anything but `background-color`.
 
 {{< example >}}
 {{< badge.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
-<span class="badge bg-{{ .name }}{{ with .contrast_color }} text-{{ . }}{{ end }}">{{ .name | title }}</span>{{- end -}}
+<span class="badge badge-solid-{{ .name }}{{ with .contrast_color }} text-{{ . }}{{ end }}">{{ .name | title }}</span>{{- end -}}
+{{< /badge.inline >}}
+{{< /example >}}
+
+## Light Background colors
+
+{{< example >}}
+{{< badge.inline >}}
+{{- range (index $.Site.Data "theme-colors-light") }}
+<span class="badge badge-{{ .name }}">{{ .name | title }}</span>{{- end -}}
 {{< /badge.inline >}}
 {{< /example >}}
 
@@ -82,9 +91,22 @@ Use the `.rounded-pill` utility class to make badges more rounded with a larger 
 {{< example >}}
 {{< badge.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
-<span class="badge rounded-pill bg-{{ .name }}{{ with .contrast_color }} text-{{ . }}{{ end }}">{{ .name | title }}</span>{{- end -}}
+<span class="badge rounded-pill badge-solid-{{ .name }}{{ with .contrast_color }} text-{{ . }}{{ end }}">{{ .name | title }}</span>{{- end -}}
 {{< /badge.inline >}}
 {{< /example >}}
+
+## Pill Light colors
+
+{{< example >}}
+{{< badge.inline >}}
+{{- range (index $.Site.Data "theme-colors-light") }}
+<span class="badge rounded-pill  badge-{{ .name }}">{{ .name | title }}</span>{{- end -}}
+{{< /badge.inline >}}
+{{< /example >}}
+
+{{< callout info >}}
+{{< partial "callout-warning-color-assistive-technologies.md" >}}
+{{< /callout >}}
 
 ## Sass
 

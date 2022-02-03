@@ -8,6 +8,7 @@
 // scss-docs-start import-stack
 // Configuration
 @import "functions";
+@import "themes/graviton/socketlabs";
 @import "themes/graviton/variables-graviton";
 @import "mixins";
 @import "utilities";
@@ -21,6 +22,13 @@
 @import "themes/graviton/utilities";
 @import "themes/graviton/ui-components";
 @import "themes/graviton/color";
+@import "themes/graviton/badge";
+@import "themes/graviton/background";
+@import "themes/graviton/alert";
+@import "themes/graviton/accordion";
+@import "themes/graviton/popover";
+@import "themes/graviton/spinners";
+@import "themes/graviton/toasts";
 
 // Layout & components
 @import "root";

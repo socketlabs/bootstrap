@@ -1,20 +1,21 @@
 - name: primary
   hex: "#421ceb"
+  contrast_color: primary
 - name: secondary
   hex: "#6c757d"
+  contrast_color: secondary
 - name: success
   hex: "#039632"
+  contrast_color: success
 - name: danger
   hex: "#db1714"
+  contrast_color: danger
 - name: warning
   hex: "#f0e018"
-  contrast_color: primary
+  contrast_color: warning
 - name: info
   hex: "#10e3bc"
+  contrast_color: info
 - name: light
   hex: "#f8f9fa"
   contrast_color: dark
-- name: dark
-  hex: "#343a40"
-- name: brand
-  hex: "#f04200"

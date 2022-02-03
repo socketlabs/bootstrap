@@ -21,6 +21,19 @@ Similar to the contextual text color classes, set the background of an element t
 <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
 {{< /example >}}
 
+## Background color light
+
+A light version of the contextual text color classes, set the background of an element to any contextual class. Background utilities **do not set `color`**, so in some cases you'll want to use `.text-*` [color utilities]({{< docsref "/utilities/colors" >}}).
+
+{{< example >}}
+{{< colors.inline >}}
+{{- range (index $.Site.Data "theme-colors-light") }}
+<div class="p-3 mb-2 bg-{{ .name }}-light {{ if .contrast_color }} text-{{ .contrast_color }}{{ end }}">.bg-{{ .name }}-light</div>
+{{- end -}}
+{{< /colors.inline >}}
+{{< /example >}}
+
+
 ## Background gradient
 
 By adding a `.bg-gradient` class, a linear gradient is added as background image to the backgrounds. This gradient starts with a semi-transparent white which fades out to the bottom.

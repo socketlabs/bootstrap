@@ -1,0 +1,9 @@
+
+
+
+/* Light background variations */
+@each $color, $value in $theme-colors-light {
+  .bg-#{$color}-light {
+    background-color: $value;
+  }
+}

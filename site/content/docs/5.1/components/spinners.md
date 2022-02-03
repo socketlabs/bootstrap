@@ -15,7 +15,19 @@ For accessibility purposes, each loader here includes `role="status"` and a nest
 {{< callout info >}}
 {{< partial "callout-info-prefersreducedmotion.md" >}}
 {{< /callout >}}
+## Main Spinner
 
+Main spinner will fill the area
+
+{{< example >}}
+<div
+     class="spinner-main">
+    <div class="background"></div>
+    <div class="donut"></div>
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+{{< /example >}}
 ## Border spinner
 
 Use the border spinners for a lightweight loading indicator.

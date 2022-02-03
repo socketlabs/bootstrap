@@ -28,15 +28,9 @@ To encourage extensible and predictable toasts, we recommend a header and body. 
 Toasts are as flexible as you need and have very little required markup. At a minimum, we require a single element to contain your "toasted" content and strongly encourage a dismiss button.
 
 {{< example class="bg-light" >}}
-<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-  <div class="toast-header">
-    {{< placeholder width="20" height="20" background="#007aff" class="rounded me-2" text="false" title="false" >}}
-    <strong class="me-auto">Bootstrap</strong>
-    <small>11 mins ago</small>
-    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-  </div>
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true">
   <div class="toast-body">
-    Hello, world! This is a toast message.
+    <i class="fi filled checkmark_circle_16 text-success"></i> Hello, world! This is a toast message.
   </div>
 </div>
 {{< /example >}}
@@ -50,19 +44,15 @@ Previously, our scripts dynamically added the `.hide` class to completely hide a
 Click the button below to show a toast (positioned with our utilities in the lower right corner) that has been hidden by default.
 
 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      {{< placeholder width="20" height="20" background="#007aff" class="rounded me-2" text="false" title="false" >}}
-      <strong class="me-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true">
+   <div class="d-flex">
     <div class="toast-body">
-      Hello, world! This is a toast message.
-    </div>
+    Hello, world! This is a toast message.
+   </div>
+    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
   </div>
 </div>
-
 <div class="bd-example">
   <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
 </div>
@@ -72,15 +62,12 @@ Click the button below to show a toast (positioned with our utilities in the low
 
 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
   <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <img src="..." class="rounded me-2" alt="...">
-      <strong class="me-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
+    <div class="d-flex">
     <div class="toast-body">
-      Hello, world! This is a toast message.
-    </div>
+    Hello, world! This is a toast message.
+   </div>
+    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
   </div>
 </div>
 ```
@@ -98,6 +85,32 @@ if (toastTrigger) {
   })
 }
 ```
+
+
+### With Header
+
+To encourage extensible and predictable toasts, we recommend a header and body. Toast headers use `display: flex`, allowing easy alignment of content thanks to our margin and flexbox utilities.
+
+Toasts are as flexible as you need and have very little required markup. At a minimum, we require a single element to contain your "toasted" content and strongly encourage a dismiss button.
+
+{{< example class="bg-light" >}}
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    {{< placeholder width="20" height="20" background="#007aff" class="rounded me-2" text="false" title="false" >}}
+    <strong class="me-auto">Bootstrap</strong>
+    <small>11 mins ago</small>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    Hello, world! This is a toast message.
+  </div>
+</div>
+{{< /example >}}
+
+{{< callout warning >}}
+Previously, our scripts dynamically added the `.hide` class to completely hide a toast (with `display:none`, rather than just with `opacity:0`). This is now not necessary anymore. However, for backwards compatibility, our script will continue to toggle the class (even though there is no practical need for it) until the next major version.
+{{< /callout >}}
+
 
 ### Translucent
 

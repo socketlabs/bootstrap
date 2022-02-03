@@ -1,0 +1,78 @@
+/* Badges */
+
+//Badge Mixins
+
+//Badge vriations
+@mixin badge-variations($color) {
+  color: $white !important;
+  background-color: $color;
+}
+
+// Badge outlined variations
+@mixin badge-outline-variations($color) {
+  color: $color !important;
+  //border: 1px solid $color;
+}
+
+.badge {
+  padding: $badge-padding-y $badge-padding-x;
+  margin: 2px;
+  @include font-size($badge-font-size);
+  font-weight: $badge-font-weight;
+  line-height: 1;
+  color: $badge-color;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  @include border-radius($badge-border-radius);
+  @include gradient-bg();
+
+  &.badge-pill {
+    // stylelint-disable-next-line property-disallowed-list
+    border-radius: 8rem;
+  }
+
+  // Empty badges collapse automatically
+  &:empty {
+    display: none;
+  }
+}
+
+/* Badge invert variations */
+@each $color, $item in $theme-colors-badge {
+  .badge-#{$color} {
+
+    @each $name, $color in $item {
+      @if ($name == "background") {
+        background-color: $color;
+      }
+      @else {
+        color: $color !important;;
+      }
+    }
+  }
+}
+
+/* Badge Solid variations */
+@each $color, $value in $theme-colors {
+  .badge-solid-#{$color} {
+    @include badge-variations($value);
+    @if ($color == "light") {
+      color: $gray-700;
+    }
+
+  }
+}
+
+/* Badge outlined variations */
+@each $color, $value in $theme-colors {
+  .badge-outline-#{$color} {
+    @if ($color == "light") {
+      color: $gray-700;
+    }
+    @else {
+      @include badge-outline-variations($value);
+    }
+
+  }
+}

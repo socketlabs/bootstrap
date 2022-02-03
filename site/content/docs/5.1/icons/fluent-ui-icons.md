@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Fluent UI Icons
-description: Fluent UI System Icons are a collection of familiar, friendly and modern icons from Microsoft.  
+description: Fluent UI System Icons are a collection of familiar, friendly and modern icons from Microsoft.  For more information visit https://fluenticons.co/
 group: icons
 aliases:
   - "/docs/5.0/fluent-ui-icons/"

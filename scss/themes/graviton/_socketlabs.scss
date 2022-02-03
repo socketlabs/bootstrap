@@ -1,0 +1,45 @@
+////////// SOCKETLABS BRANDING //////////
+$sl-orange:         #ed7d38 !default;
+$sl-orange-fill:    #fffbf9 !default;
+
+$sl-primary:        #181a3c !default;
+$sl-secondary:      #005c8d !default;
+$sl-info:           #0073b0 !default;
+$sl-success:        #46c35f !default;
+$sl-warning:        #ffc107 !default;
+$sl-danger:         #dc2626 !default;
+$sl-sky:            #edf7fe !default;
+
+$sl-light-secondary: #e0e4e7 !default;
+$sl-light-info:      #effaff !default;
+$sl-light-success:   #e1f5e5 !default;
+$sl-light-warning:   #fff4d3 !default;
+$sl-light-danger:    #fceaea !default;
+
+$sl-dark-secondary: #002a41 !default;
+$sl-dark-info:      #0d4968 !default;
+$sl-dark-success:   #0f7423 !default;
+$sl-dark-warning:   #7a5d07 !default;
+$sl-dark-danger:    #950c0c !default;
+
+
+$sl-gray-900: #0f172a !default;
+$sl-gray-800: #1e293b !default;
+$sl-gray-700: #334155 !default;
+$sl-gray-600: #475569 !default;
+$sl-gray-500: #64748b !default;
+$sl-gray-400: #94a3b8 !default;
+$sl-gray-300: #cbd5e1 !default;
+$sl-gray-200: #e2e8f0 !default;
+$sl-gray-100: #f1f5f9 !default;
+$sl-gray-50:  #f8fafc !default;
+
+
+/* StreamScore colors */
+$sl-good: $sl-success !default;
+$sl-fair: $sl-warning !default;
+$sl-poor: $sl-danger !default;
+
+$sl-fill-good: rgb(56, 206, 60, .6) !default;
+$sl-fill-fair: rgb(255, 193, 7, .6) !default;
+$sl-fill-poor: rgb(237, 64, 43, .6) !default;
