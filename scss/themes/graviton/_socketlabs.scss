@@ -40,6 +40,6 @@ $sl-good: $sl-success !default;
 $sl-fair: $sl-warning !default;
 $sl-poor: $sl-danger !default;
 
-$sl-fill-good: rgb(56, 206, 60, .6) !default;
-$sl-fill-fair: rgb(255, 193, 7, .6) !default;
-$sl-fill-poor: rgb(237, 64, 43, .6) !default;
+$sl-fill-good: rgba(56, 206, 60, .6) !default;
+$sl-fill-fair: rgba(255, 193, 7, .6) !default;
+$sl-fill-poor: rgba(237, 64, 43, .6) !default;
