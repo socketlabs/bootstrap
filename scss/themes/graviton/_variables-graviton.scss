@@ -427,7 +427,7 @@ $gradient: linear-gradient(318deg, rgba($black, .15), rgba($white, 0)) !default;
 // You can add more entries to the $spacers map, should you need more variation.
 
 // scss-docs-start spacer-variables-maps
-$spacer: 0.625rem !default;
+$spacer: 1rem !default;
 $spacers: (
   0: 0,
   1: $spacer * .25,
@@ -639,7 +639,7 @@ $font-family-code:            var(--#{$variable-prefix}font-monospace) !default;
 // $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings and margins
 // $font-size-base affects the font size of the body text
 $font-size-root:              null !default;
-$font-size-base:              .875rem !default; // 14px as base font size
+$font-size-base:              1rem !default; // 16px base per design documents and web best practices.
 $font-size-sm:                $font-size-base * .875 !default;
 $font-size-lg:                $font-size-base * 1.25 !default;
 
