@@ -460,6 +460,9 @@ $body-bg:                   $white !default;
 $body-color:                $gray-800 !default;
 $body-text-align:           null !default;
 
+$text-muted: $sl-gray-400;
+$text-deemphasized: $sl-gray-600;
+
 // Utilities maps
 //
 // Extends the default `$theme-colors` maps to help create our utilities.
@@ -647,6 +650,7 @@ $font-size-lg:                $font-size-base * 1.25 !default;
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
+$font-weight-medium:          600 !default;
 $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
 
@@ -1311,8 +1315,8 @@ $placeholder-opacity-min:           .2 !default;
 // Cards
 
 // scss-docs-start card-variables
-$card-spacer-y:                     $spacer !default;
-$card-spacer-x:                     $spacer !default;
+$card-spacer-y:                     $spacer * 2 !default;
+$card-spacer-x:                     $spacer * 2 !default;
 $card-title-spacer-y:               $spacer * .5 !default;
 $card-border-width:                 $border-width !default;
 

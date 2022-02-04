@@ -39,12 +39,13 @@
   .alert-#{$color} {
     @each $name, $color in $item {
       @if ($name == "background") {
-        background-color: $color;
+        background-color: $color !important;
       }
       @else {
         color: $color !important;;
       }
     }
+      border: 0 !important;
     // @include alert-variant($alert-background, $alert-border, $alert-color);
   }
 }

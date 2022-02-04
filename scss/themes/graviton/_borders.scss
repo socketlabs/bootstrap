@@ -1,0 +1,274 @@
+
+.border-right-sm {
+    @media (min-width: 576px) {
+        border-right: $border-width solid $border-color;
+    }
+}
+
+.border-right-md {
+    @media (min-width: 768px) {
+        border-right: $border-width solid $border-color;
+    }
+}
+
+.border-right-lg {
+    @media (min-width: 992px) {
+        border-right: $border-width solid $border-color;
+    }
+}
+
+.border-left-sm {
+    @media (min-width: 576px) {
+        border-left: $border-width solid $border-color;
+    }
+}
+
+.border-left-md {
+    @media (min-width: 768px) {
+        border-left: $border-width solid $border-color;
+    }
+}
+
+.border-left-lg {
+    @media (min-width: 992px) {
+        border-left: $border-width solid $border-color;
+    }
+}
+
+
+// gray background fill variations
+@each $color, $value in $grays {
+    // Top
+    .border-top-gray-#{$color} {
+        border-top: $border-width solid $value;
+    }
+
+    .border-top-gray-#{$color}-sm {
+        @media (min-width: 576px) {
+            border-top: $border-width solid $value;
+        }
+    }
+
+    .border-top-gray-#{$color}-md {
+        @media (min-width: 768px) {
+            border-top: $border-width solid $value;
+        }
+    }
+
+    .border-top-gray-#{$color}-lg {
+        @media (min-width: 992px) {
+            border-top: $border-width solid $value;
+        }
+    }
+
+    // Bottom
+    .border-bottom-gray-#{$color} {
+        border-right: $border-width solid $value;
+    }
+
+    .border-bottom-gray-#{$color}-sm {
+        @media (min-width: 576px) {
+            border-right: $border-width solid $value;
+        }
+    }
+
+    .border-bottom-gray-#{$color}-md {
+        @media (min-width: 768px) {
+            border-right: $border-width solid $value;
+        }
+    }
+
+    .border-bottom-gray-#{$color}-lg {
+        @media (min-width: 992px) {
+            border-right: $border-width solid $value;
+        }
+    }
+
+    // Right
+    .border-right-gray-#{$color} {
+        border-right: $border-width solid $value;
+    }
+
+    .border-right-gray-#{$color}-sm {
+        @media (min-width: 576px) {
+            border-right: $border-width solid $value;
+        }
+    }
+
+    .border-right-gray-#{$color}-md {
+        @media (min-width: 768px) {
+            border-right: $border-width solid $value;
+        }
+    }
+
+    .border-right-gray-#{$color}-lg {
+        @media (min-width: 992px) {
+            border-right: $border-width solid $value;
+        }
+    }
+
+    // Left
+    .border-left-gray-#{$color} {
+        border-left: $border-width solid $value;
+    }
+
+    .border-left-gray-#{$color}-sm {
+        @media (min-width: 576px) {
+            border-left: $border-width solid $value;
+        }
+    }
+
+    .border-left-gray-#{$color}-md {
+        @media (min-width: 768px) {
+            border-left: $border-width solid $value;
+        }
+    }
+
+    .border-left-gray-#{$color}-lg {
+        @media (min-width: 992px) {
+            border-left: $border-width solid $value;
+        }
+    }
+
+    // All
+    .border-gray-#{$color} {
+        border: $border-width solid $value;
+    }
+
+    .border-gray-#{$color}-sm {
+        @media (min-width: 576px) {
+            border: $border-width solid $value;
+        }
+    }
+
+    .border-gray-#{$color}-md {
+        @media (min-width: 768px) {
+            border: $border-width solid $value;
+        }
+    }
+
+    .border-gray-#{$color}-lg {
+        @media (min-width: 992px) {
+            border: $border-width solid $value;
+        }
+    }
+}
+
+
+// theme color variations
+@each $color, $value in $theme-colors {
+    // Top
+    .border-top-#{$color} {
+        border-top: $border-width solid $value;
+    }
+
+    .border-top-#{$color}-sm {
+        @media (min-width: 576px) {
+            border-top: $border-width solid $value;
+        }
+    }
+
+    .border-top-#{$color}-md {
+        @media (min-width: 768px) {
+            border-top: $border-width solid $value;
+        }
+    }
+
+    .border-top-#{$color}-lg {
+        @media (min-width: 992px) {
+            border-top: $border-width solid $value;
+        }
+    }
+
+    // Bottom
+    .border-bottom-#{$color} {
+        border-right: $border-width solid $value;
+    }
+
+    .border-bottom-#{$color}-sm {
+        @media (min-width: 576px) {
+            border-right: $border-width solid $value;
+        }
+    }
+
+    .border-bottom-#{$color}-md {
+        @media (min-width: 768px) {
+            border-right: $border-width solid $value;
+        }
+    }
+
+    .border-bottom-#{$color}-lg {
+        @media (min-width: 992px) {
+            border-right: $border-width solid $value;
+        }
+    }
+
+    // Right
+    .border-right-#{$color} {
+        border-right: $border-width solid $value;
+    }
+
+    .border-right-#{$color}-sm {
+        @media (min-width: 576px) {
+            border-right: $border-width solid $value;
+        }
+    }
+
+    .border-right-#{$color}-md {
+        @media (min-width: 768px) {
+            border-right: $border-width solid $value;
+        }
+    }
+
+    .border-right-#{$color}-lg {
+        @media (min-width: 992px) {
+            border-right: $border-width solid $value;
+        }
+    }
+
+    // Left
+    .border-left-#{$color} {
+        border-left: $border-width solid $value;
+    }
+
+    .border-left-#{$color}-sm {
+        @media (min-width: 576px) {
+            border-left: $border-width solid $value;
+        }
+    }
+
+    .border-left-#{$color}-md {
+        @media (min-width: 768px) {
+            border-left: $border-width solid $value;
+        }
+    }
+
+    .border-left-#{$color}-lg {
+        @media (min-width: 992px) {
+            border-left: $border-width solid $value;
+        }
+    }
+
+    // All
+    .border-#{$color} {
+        border: $border-width solid $value;
+    }
+
+    .border-#{$color}-sm {
+        @media (min-width: 576px) {
+            border: $border-width solid $value;
+        }
+    }
+
+    .border-#{$color}-md {
+        @media (min-width: 768px) {
+            border: $border-width solid $value;
+        }
+    }
+
+    .border-#{$color}-lg {
+        @media (min-width: 992px) {
+            border: $border-width solid $value;
+        }
+    }
+}
