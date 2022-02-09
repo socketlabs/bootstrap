@@ -1,0 +1,48 @@
+
+.toast-header {
+
+}
+
+
+
+    .toast-success,
+    .toast-info,
+    .toast-error,
+    .toast-warning {
+        font-size: $default-font-size;
+        background-color: $white;
+        background-image: none;
+        border-color: $border-color;
+    }
+
+    .toast-success:before,
+    .toast-info:before,
+    .toast-error:before,
+    .toast-warning:before {
+        font-family: "FluentSystemIcons-Filled";
+        font-weight: 900;
+        position: absolute;
+        margin-left: -30px;
+        margin-top: 3px;
+    }
+
+    .toast-info:before {
+        color: $secondary;
+        content: "\f297"; //.fi.filled.checkmark_circle_16:before
+        //border-top:4px solid $sl-secondary;
+    }
+    .toast-success:before {
+        color: $success;
+        content: fa-content($fa-var-check-circle);
+        //border-top: 4px solid $sl-success;
+    }
+    .toast-error:before {
+        color: $danger;
+        content: fa-content($fa-var-exclamation-circle);
+        //border-top: 4px solid $sl-danger;
+    }
+    .toast-warning:before {
+        color: $warning;
+        content: fa-content($fa-var-exclamation-triangle);
+        //border-top: 4px solid $sl-warning;
+    }

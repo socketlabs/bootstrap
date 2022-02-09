@@ -30,3 +30,16 @@
 .text-muted {
     color: $text-muted
 }
+.text-gray {
+  color: $gray-700;
+}
+.text-black {
+  color: $black;
+}
+.text-small {
+  font-size: .75rem; //12px
+}
+.text-invalid {
+  color: $danger;
+  font-size: $input-font-size;
+}

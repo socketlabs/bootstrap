@@ -545,8 +545,8 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px,
-  xxl: 1320px
+  xl: 1120px, //1140px,
+  xxl: 1120px //1320px
 ) !default;
 // scss-docs-end container-max-widths
 
@@ -641,8 +641,8 @@ $font-family-code:            var(--#{$variable-prefix}font-monospace) !default;
 
 // $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings and margins
 // $font-size-base affects the font size of the body text
-$font-size-root:              null !default;
-$font-size-base:              1rem !default; // 16px base per design documents and web best practices.
+$font-size-root:              1rem !default;
+$font-size-base:              .875rem !default; // 14px as base font size      //1rem !default; // 16px base per design documents and web best practices.
 $font-size-sm:                $font-size-base * .875 !default;
 $font-size-lg:                $font-size-base * 1.25 !default;
 
@@ -660,12 +660,12 @@ $line-height-base:            1.5 !default;
 $line-height-sm:              1.25 !default;
 $line-height-lg:              2 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default;
+$h1-font-size:                2.1875rem !default;
+$h2-font-size:                1.875rem !default;
+$h3-font-size:                1.5rem !default;
+$h4-font-size:                1.125rem !default;
+$h5-font-size:                1rem !default;
+$h6-font-size:                .9375re !default;
 // scss-docs-end font-variables
 
 // scss-docs-start font-sizes
@@ -1315,14 +1315,15 @@ $placeholder-opacity-min:           .2 !default;
 // Cards
 
 // scss-docs-start card-variables
-$card-spacer-y:                     $spacer * 2 !default;
-$card-spacer-x:                     $spacer * 2 !default;
+$card-spacer-y:                     1.25rem !default;
+$card-spacer-x:                     1.875rem !default;
 $card-title-spacer-y:               $spacer * .5 !default;
 $card-border-width:                 $border-width !default;
 
 $card-border-radius:                $border-radius !default;
 $card-box-shadow:                   null !default;
 $card-border-color:                 rgba($black, .125) !default;
+$card-border:                       $card-border-width solid $card-border-color;
 $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
 $card-cap-padding-y:                $card-spacer-y * .5 !default;
 $card-cap-padding-x:                $card-spacer-x !default;
@@ -1487,8 +1488,8 @@ $modal-backdrop-bg:                 $black !default;
 $modal-backdrop-opacity:            .5 !default;
 $modal-header-border-color:         $border-color !default;
 $modal-footer-border-color:         $modal-header-border-color !default;
-$modal-header-border-width:         $modal-content-border-width !default;
-$modal-footer-border-width:         $modal-header-border-width !default;
+$modal-header-border-width:         null !default;
+$modal-footer-border-width:         null !default;
 $modal-header-padding-y:            $modal-inner-padding !default;
 $modal-header-padding-x:            $modal-inner-padding !default;
 $modal-header-padding:              $modal-header-padding-y $modal-header-padding-x !default; // Keep this for backwards compatibility
