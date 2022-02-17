@@ -1,38 +1,26 @@
 
-.border-right-sm {
-    @media (min-width: 576px) {
-        border-right: $border-width solid $border-color;
-    }
+.border-start-sm {
+    border-left: $border-width*.5 solid $border-color !important;
 }
 
-.border-right-md {
-    @media (min-width: 768px) {
-        border-right: $border-width solid $border-color;
-    }
+.border-start-md {
+    border-left: $border-width*2 solid $border-color !important;
 }
 
-.border-right-lg {
-    @media (min-width: 992px) {
-        border-right: $border-width solid $border-color;
-    }
+.border-start-lg {
+    border-left: $border-width*4 solid $border-color !important;
 }
 
-.border-left-sm {
-    @media (min-width: 576px) {
-        border-left: $border-width solid $border-color;
-    }
+.border-end-sm {
+    border-right: $border-width*.5 solid $border-color !important;
 }
 
-.border-left-md {
-    @media (min-width: 768px) {
-        border-left: $border-width solid $border-color;
-    }
+.border-end-md {
+    border-right: $border-width*2 solid $border-color !important;
 }
 
-.border-left-lg {
-    @media (min-width: 992px) {
-        border-left: $border-width solid $border-color;
-    }
+.border-end-lg {
+    border-right: $border-width*4 solid $border-color !important;
 }
 
 
@@ -40,117 +28,87 @@
 @each $color, $value in $grays {
     // Top
     .border-top-gray-#{$color} {
-        border-top: $border-width solid $value;
+        border-top: $border-width solid $value !important;
     }
 
     .border-top-gray-#{$color}-sm {
-        @media (min-width: 576px) {
-            border-top: $border-width solid $value;
-        }
+        border-top: $border-width*.5 solid $value !important;
     }
 
     .border-top-gray-#{$color}-md {
-        @media (min-width: 768px) {
-            border-top: $border-width solid $value;
-        }
+        border-top: $border-width*2 solid $value !important;
     }
 
     .border-top-gray-#{$color}-lg {
-        @media (min-width: 992px) {
-            border-top: $border-width solid $value;
-        }
+        border-top: $border-width*4 solid $value !important;
     }
 
     // Bottom
     .border-bottom-gray-#{$color} {
-        border-right: $border-width solid $value;
+        border-bottom: $border-width solid $value !important;
     }
 
     .border-bottom-gray-#{$color}-sm {
-        @media (min-width: 576px) {
-            border-right: $border-width solid $value;
-        }
+        border-bottom: $border-width*.5 solid $value !important;
     }
 
     .border-bottom-gray-#{$color}-md {
-        @media (min-width: 768px) {
-            border-right: $border-width solid $value;
-        }
+        border-bottom: $border-width*2 solid $value !important;
     }
 
     .border-bottom-gray-#{$color}-lg {
-        @media (min-width: 992px) {
-            border-right: $border-width solid $value;
-        }
+        border-bottom: $border-width*4 solid $value !important;
     }
 
     // Right
-    .border-right-gray-#{$color} {
-        border-right: $border-width solid $value;
+    .border-end-gray-#{$color} {
+        border-right: $border-width solid $value !important;
     }
 
-    .border-right-gray-#{$color}-sm {
-        @media (min-width: 576px) {
-            border-right: $border-width solid $value;
-        }
+    .border-end-gray-#{$color}-sm {
+        border-right: $border-width*.5 solid $value !important;
     }
 
-    .border-right-gray-#{$color}-md {
-        @media (min-width: 768px) {
-            border-right: $border-width solid $value;
-        }
+    .border-end-gray-#{$color}-md {
+        border-right: $border-width*2 solid $value !important;
     }
 
-    .border-right-gray-#{$color}-lg {
-        @media (min-width: 992px) {
-            border-right: $border-width solid $value;
-        }
+    .border-end-gray-#{$color}-lg {
+        border-right: $border-width*4 solid $value !important;
     }
 
     // Left
-    .border-left-gray-#{$color} {
-        border-left: $border-width solid $value;
+    .border-start-gray-#{$color} {
+        border-left: $border-width solid $value !important;
     }
 
-    .border-left-gray-#{$color}-sm {
-        @media (min-width: 576px) {
-            border-left: $border-width solid $value;
-        }
+    .border-start-gray-#{$color}-sm {
+        border-left: $border-width*.5 solid $value !important;
     }
 
-    .border-left-gray-#{$color}-md {
-        @media (min-width: 768px) {
-            border-left: $border-width solid $value;
-        }
+    .border-start-gray-#{$color}-md {
+        border-left: $border-width*2 solid $value !important;
     }
 
-    .border-left-gray-#{$color}-lg {
-        @media (min-width: 992px) {
-            border-left: $border-width solid $value;
-        }
+    .border-start-gray-#{$color}-lg {
+        border-left: $border-width*4 solid $value !important;
     }
 
     // All
     .border-gray-#{$color} {
-        border: $border-width solid $value;
+        border: $border-width solid $value !important;
     }
 
     .border-gray-#{$color}-sm {
-        @media (min-width: 576px) {
-            border: $border-width solid $value;
-        }
+        border: $border-width*.5 solid $value !important;
     }
 
     .border-gray-#{$color}-md {
-        @media (min-width: 768px) {
-            border: $border-width solid $value;
-        }
+        border: $border-width*2 solid $value !important;
     }
 
     .border-gray-#{$color}-lg {
-        @media (min-width: 992px) {
-            border: $border-width solid $value;
-        }
+        border: $border-width*4 solid $value !important;
     }
 }
 
@@ -159,116 +117,86 @@
 @each $color, $value in $theme-colors {
     // Top
     .border-top-#{$color} {
-        border-top: $border-width solid $value;
+        border-top: $border-width solid $value !important;
     }
 
     .border-top-#{$color}-sm {
-        @media (min-width: 576px) {
-            border-top: $border-width solid $value;
-        }
+        border-top: $border-width*.5 solid $value !important;
     }
 
     .border-top-#{$color}-md {
-        @media (min-width: 768px) {
-            border-top: $border-width solid $value;
-        }
+        border-top: $border-width*2 solid $value !important;
     }
 
     .border-top-#{$color}-lg {
-        @media (min-width: 992px) {
-            border-top: $border-width solid $value;
-        }
+        border-top: $border-width*4 solid $value !important;
     }
 
     // Bottom
     .border-bottom-#{$color} {
-        border-right: $border-width solid $value;
+        border-bottom: $border-width solid $value !important;
     }
 
     .border-bottom-#{$color}-sm {
-        @media (min-width: 576px) {
-            border-right: $border-width solid $value;
-        }
+        border-bottom: $border-width*.5 solid $value !important;
     }
 
     .border-bottom-#{$color}-md {
-        @media (min-width: 768px) {
-            border-right: $border-width solid $value;
-        }
+        border-bottom: $border-width*2 solid $value !important;
     }
 
     .border-bottom-#{$color}-lg {
-        @media (min-width: 992px) {
-            border-right: $border-width solid $value;
-        }
+        border-bottom: $border-width*4 solid $value !important;
     }
 
     // Right
-    .border-right-#{$color} {
-        border-right: $border-width solid $value;
+    .border-end-#{$color} {
+        border-right: $border-width solid $value !important;
     }
 
-    .border-right-#{$color}-sm {
-        @media (min-width: 576px) {
-            border-right: $border-width solid $value;
-        }
+    .border-end-#{$color}-sm {
+        border-right: $border-width*.5 solid $value !important;
     }
 
-    .border-right-#{$color}-md {
-        @media (min-width: 768px) {
-            border-right: $border-width solid $value;
-        }
+    .border-end-#{$color}-md {
+        border-right: $border-width*2 solid $value !important;
     }
 
-    .border-right-#{$color}-lg {
-        @media (min-width: 992px) {
-            border-right: $border-width solid $value;
-        }
+    .border-end-#{$color}-lg {
+        border-right: $border-width*4 solid $value !important;
     }
 
     // Left
-    .border-left-#{$color} {
-        border-left: $border-width solid $value;
+    .border-start-#{$color} {
+        border-left: $border-width solid $value !important;
     }
 
-    .border-left-#{$color}-sm {
-        @media (min-width: 576px) {
-            border-left: $border-width solid $value;
-        }
+    .border-start-#{$color}-sm {
+        border-left: $border-width*.5 solid $value !important;
     }
 
-    .border-left-#{$color}-md {
-        @media (min-width: 768px) {
-            border-left: $border-width solid $value;
-        }
+    .border-start-#{$color}-md {
+        border-left: $border-width*2 solid $value !important;
     }
 
-    .border-left-#{$color}-lg {
-        @media (min-width: 992px) {
-            border-left: $border-width solid $value;
-        }
+    .border-start-#{$color}-lg {
+        border-left: $border-width*4 solid $value !important;
     }
 
     // All
     .border-#{$color} {
-        border: $border-width solid $value;
+        border: $border-width solid $value !important;
     }
 
     .border-#{$color}-sm {
-        @media (min-width: 576px) {
-            border: $border-width solid $value;
-        }
+        border: $border-width*.5 solid $value !important;
     }
 
     .border-#{$color}-md {
-        @media (min-width: 768px) {
-            border: $border-width solid $value;
-        }
+        border: $border-width*2 solid $value !important;
     }
 
     .border-#{$color}-lg {
-        @media (min-width: 992px) {
-            border: $border-width solid $value;
-        }
+        border: $border-width*4 solid $value !important;
     }
 }

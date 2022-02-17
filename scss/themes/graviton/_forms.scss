@@ -101,4 +101,16 @@
   font-size: .75rem;
   font-weight: 600;
 }
+
+
+@each $color, $value in $theme-colors {
+    .form-switch-#{$color}:checked {
+        background-color: $value !important;
+        border-color: $value !important;
+    @if ($color == "light") {
+            color: $gray-700 !important;
+        }
+    }
+}
+
 /* stylelint-enable */

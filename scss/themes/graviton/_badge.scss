@@ -47,7 +47,7 @@
         background-color: $color;
       }
       @else {
-        color: $color !important;;
+        color: $color !important;
       }
     }
   }
@@ -58,7 +58,7 @@
   .badge-solid-#{$color} {
     @include badge-variations($value);
     @if ($color == "light") {
-      color: $gray-700;
+      color: $gray-700 !important;
     }
 
   }
@@ -68,7 +68,7 @@
 @each $color, $value in $theme-colors {
   .badge-outline-#{$color} {
     @if ($color == "light") {
-      color: $gray-700;
+      color: $gray-700 !important;
     }
     @else {
       @include badge-outline-variations($value);

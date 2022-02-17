@@ -14,24 +14,25 @@
 @import "utilities";
 
 // Theme layout & components
-@import "themes/graviton/sidebar";
-@import "themes/graviton/layout";
-@import "themes/graviton/type";
-@import "themes/graviton/forms";
-@import "themes/graviton/nav";
-@import "themes/graviton/utilities";
-@import "themes/graviton/ui-components";
-@import "themes/graviton/color";
-@import "themes/graviton/badge";
-@import "themes/graviton/background";
-@import "themes/graviton/alert";
 @import "themes/graviton/accordion";
+@import "themes/graviton/alert";
+@import "themes/graviton/background";
+@import "themes/graviton/badge";
+@import "themes/graviton/borders";
+@import "themes/graviton/buttons";
+@import "themes/graviton/card";
+@import "themes/graviton/color";
+@import "themes/graviton/forms";
+@import "themes/graviton/layout";
+@import "themes/graviton/nav";
 @import "themes/graviton/popover";
+@import "themes/graviton/sidebar";
+@import "themes/graviton/skeleton";
 @import "themes/graviton/spinners";
 @import "themes/graviton/toasts";
-@import "themes/graviton/card";
-@import "themes/graviton/borders";
-@import "themes/graviton/skeleton";
+@import "themes/graviton/type";
+@import "themes/graviton/ui-components";
+@import "themes/graviton/utilities";
 
 
 // Layout & components

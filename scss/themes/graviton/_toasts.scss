@@ -3,7 +3,82 @@
 
 }
 
+.toast-visible {
+    display: flex;
+    flex-direction: row;
+    animation: fadein 1.5s;
+}
 
+.toast-success,
+.toast-info,
+.toast-error,
+.toast-warning {
+    font-size: $default-font-size;
+    background-color: $white;
+    background-image: none;
+    border-color: $border-color;
+}
+
+.toast-success:before,
+.toast-info:before,
+.toast-error:before,
+.toast-warning:before {
+    font-family: "FluentSystemIcons-Filled";
+    font-weight: 900;
+    position: absolute;
+    margin-left: -30px;
+    margin-top: 3px;
+}
+
+.toast-info:before {
+    color: $secondary;
+    content: "\f4a3"; //fi regular info_20
+    //border-top:4px solid $sl-secondary;
+}
+.toast-success:before {
+    color: $success;
+    content: "\f298"; //fi regular checkmark_circle_20
+    //border-top: 4px solid $sl-success;
+}
+.toast-error:before {
+    color: $danger;
+    content: "\f3f1"; //fi regular error_circle_20
+    //border-top: 4px solid $sl-danger;
+}
+.toast-warning:before {
+    color: $warning;
+    content: "\f869"; //fi regular warning_20
+    //border-top: 4px solid $sl-warning;
+}
+
+
+
+
+
+
+.toast-container {
+    color: $body-color;
+    border-color: $border-color;
+    margin-top: 60px;
+
+    .toast-title{
+        color: $body-color;
+        font-weight: 600;
+    }
+    .toast-message{
+        color: $text-deemphasized;
+    }
+
+    .toast-close-button {
+        color: $body-color !important;
+        border: 0;
+        background-color: transparent;
+        float: right;
+    }
+    .toast-close-button:active,
+    .toast-close-button:visited {
+        color: $body-color;
+    }
 
     .toast-success,
     .toast-info,
@@ -19,7 +94,7 @@
     .toast-info:before,
     .toast-error:before,
     .toast-warning:before {
-        font-family: "FluentSystemIcons-Filled";
+        font-family: "Font Awesome 5 Free";
         font-weight: 900;
         position: absolute;
         margin-left: -30px;
@@ -28,7 +103,7 @@
 
     .toast-info:before {
         color: $secondary;
-        content: "\f297"; //.fi.filled.checkmark_circle_16:before
+        content: fa-content($fa-var-info-circle);
         //border-top:4px solid $sl-secondary;
     }
     .toast-success:before {
@@ -46,3 +121,5 @@
         content: fa-content($fa-var-exclamation-triangle);
         //border-top: 4px solid $sl-warning;
     }
+
+}

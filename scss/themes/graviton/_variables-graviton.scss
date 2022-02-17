@@ -80,13 +80,13 @@ $colors: (
 
 // scss-docs-start theme-color-variables
 $primary:       $blue !default;
-$secondary:     $gray-600 !default;
+$secondary:     $sl-secondary !default;
 $success:       $green !default;
-$info:          $cyan !default;
+$info:          $sl-info !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
-$dark:          $gray-900 !default;
+$dark:          $gray-700 !default;
 $brand:         $orange !default;
 // scss-docs-end theme-color-variables
 
@@ -500,11 +500,11 @@ $utilities-bg-colors: map-loop($utilities-bg, rgba-css-var, "$key", "bg") !defau
 //
 // Style anchor elements.
 
-$link-color:                              $primary !default;
-$link-decoration:                         underline !default;
+$link-color:                              $secondary !default;
+$link-decoration:                         none !default;
 $link-shade-percentage:                   20% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
-$link-hover-decoration:                   null !default;
+$link-hover-decoration:                   underline !default;
 
 $stretched-link-pseudo-element:           after !default;
 $stretched-link-z-index:                  1 !default;
@@ -665,7 +665,7 @@ $h2-font-size:                1.875rem !default;
 $h3-font-size:                1.5rem !default;
 $h4-font-size:                1.125rem !default;
 $h5-font-size:                1rem !default;
-$h6-font-size:                .9375re !default;
+$h6-font-size:                .9375rem !default;
 // scss-docs-end font-variables
 
 // scss-docs-start font-sizes
@@ -1148,7 +1148,7 @@ $nav-link-padding-y:                .5rem !default;
 $nav-link-padding-x:                1rem !default;
 $nav-link-font-size:                null !default;
 $nav-link-font-weight:              null !default;
-$nav-link-color:                    $link-color !default;
+$nav-link-color:                    $primary !default;
 $nav-link-hover-color:              $link-hover-color !default;
 $nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
 $nav-link-disabled-color:           $gray-600 !default;
@@ -1488,8 +1488,8 @@ $modal-backdrop-bg:                 $black !default;
 $modal-backdrop-opacity:            .5 !default;
 $modal-header-border-color:         $border-color !default;
 $modal-footer-border-color:         $modal-header-border-color !default;
-$modal-header-border-width:         null !default;
-$modal-footer-border-width:         null !default;
+$modal-header-border-width:         0 !default;
+$modal-footer-border-width:         0 !default;
 $modal-header-padding-y:            $modal-inner-padding !default;
 $modal-header-padding-x:            $modal-inner-padding !default;
 $modal-header-padding:              $modal-header-padding-y $modal-header-padding-x !default; // Keep this for backwards compatibility

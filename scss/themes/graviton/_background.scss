@@ -7,3 +7,18 @@
     background-color: $value;
   }
 }
+
+
+/* Color background variations */
+@each $color, $value in $theme-colors {
+    .bg-#{$color} {
+        background-color: $value;
+    }
+}
+
+/* Gray background variations */
+@each $color, $value in $grays {
+    .bg-gray-#{$color} {
+        background-color: $value;
+    }
+}
