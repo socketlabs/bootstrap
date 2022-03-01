@@ -758,6 +758,7 @@ $table-color:                 $body-color !default;
 $table-bg:                    transparent !default;
 $table-accent-bg:             transparent !default;
 
+$table-font-size:             $font-family-brand;
 $table-th-font-weight:        null !default;
 
 $table-striped-color:         $table-color !default;
@@ -769,12 +770,19 @@ $table-active-bg-factor:      .1 !default;
 $table-active-bg:             rgba($black, $table-active-bg-factor) !default;
 
 $table-hover-color:           $table-color !default;
-$table-hover-bg-factor:       .075 !default;
-$table-hover-bg:              rgba($black, $table-hover-bg-factor) !default;
+$table-hover-bg-factor:       1 !default;//.075 !default;
+$table-hover-bg:              $gray-50 !default;//rgba($black, $table-hover-bg-factor) !default;
 
 $table-border-factor:         .1 !default;
 $table-border-width:          $border-width !default;
 $table-border-color:          $border-color !default;
+
+$table-head-border-radius:    7px;
+$table-head-color:            $body-color;
+$table-head-bg:               $sl-gray-50;
+
+$table-cell-line-height:      1;
+$table-cell-padding:          0.813rem;
 
 $table-striped-order:         odd !default;
 
